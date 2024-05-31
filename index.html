@@ -17,42 +17,48 @@
             text-align: center;
             padding: 1em 0;
         }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
+        nav {
+            background-color: #282c34;
+            color: white;
+            padding: 1em;
             text-align: center;
         }
-        #main {
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 80%;
+            margin: auto;
             padding: 2em 0;
+        }
+        .main-content {
+            flex: 2;
+            padding: 1em;
+        }
+        .sidebar {
+            flex: 1;
+            background-color: #f1f1f1;
+            padding: 1em;
+            margin-left: 1em;
         }
         img {
             display: block;
-            margin: 0 auto;
+            margin: 0 auto 1em auto;
             max-width: 100%;
             height: auto;
             border-radius: 50%;
             width: 200px; /* プロフィール画像の大きさを調整 */
-        }
-        .content {
-            text-align: center;
-            padding: 2em 0;
-        }
-        .intro {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: left; /* 中央の左詰めにする */
-            line-height: 1.6;
-            padding-bottom: 4em; /* 余白を追加 */
         }
         footer {
             background-color: #343a40;
             color: white;
             text-align: center;
             padding: 1em 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            margin-top: 2em;
         }
     </style>
 </head>
@@ -60,18 +66,33 @@
     <header>
         <h1>多士亮磨の部屋</h1>
     </header>
+    <nav>
+        <a href="#home">ホーム</a>
+        <a href="#about">自己紹介</a>
+        <a href="#services">サービス</a>
+        <a href="#contact">お問い合わせ</a>
+    </nav>
     <div class="container">
-        <section id="main">
-            <img src="tashiryoma.jpg" alt="多士亮磨の写真">
-            <div class="content">
+        <div class="main-content">
+            <section id="home">
+                <img src="tashiryoma.jpg" alt="多士亮磨の写真">
                 <h2>多士亮磨</h2>
-                <p class="intro">こんにちは、私は多士亮磨です。<br>
+                <p>こんにちは、私は多士亮磨です。<br>
                 カスタムGPTsのもとで様々なAIツールを開発しています。<br><br>
                 主にアニメ業界を更に盛り上げるためのAIツールを中心に取り組んでいます。<br><br>
                 2023年11月からこの分野に専念し、約半年間にわたり革新的なソリューションの開発に努めてきました。<br><br>
                 九州出身で、AIを活用してアニメの世界に新たな興奮と可能性をもたらすことに情熱を持っています。</p>
-            </div>
-        </section>
+            </section>
+        </div>
+        <aside class="sidebar">
+            <h3>目次</h3>
+            <ul>
+                <li><a href="#home">ホーム</a></li>
+                <li><a href="#about">自己紹介</a></li>
+                <li><a href="#services">サービス</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
+            </ul>
+        </aside>
     </div>
     <footer>
         <p>&copy; 2024 多士亮磨の部屋. All rights reserved.</p>
