@@ -6,19 +6,26 @@
     <title>多士亮磨の部屋</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
+            background-color: #f4f4f4;
+            color: #333;
         }
         header {
-            background-color: #343a40;
+            background-color: #282c34;
             color: white;
             text-align: center;
-            padding: 1em 0;
+            padding: 2em 0;
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 700;
         }
         nav {
-            background-color: #282c34;
+            background-color: #404552;
             color: white;
             padding: 1em;
             text-align: center;
@@ -27,6 +34,10 @@
             color: white;
             margin: 0 15px;
             text-decoration: none;
+            font-weight: 600;
+        }
+        nav a:hover {
+            text-decoration: underline;
         }
         .container {
             display: flex;
@@ -38,12 +49,17 @@
         .main-content {
             flex: 2;
             padding: 1em;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         .sidebar {
             flex: 1;
             background-color: #f1f1f1;
             padding: 1em;
             margin-left: 1em;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         img {
             display: block;
@@ -51,14 +67,31 @@
             max-width: 100%;
             height: auto;
             border-radius: 50%;
-            width: 200px; /* プロフィール画像の大きさを調整 */
+            width: 200px;
         }
         footer {
-            background-color: #343a40;
+            background-color: #282c34;
             color: white;
             text-align: center;
             padding: 1em 0;
             margin-top: 2em;
+            position: relative;
+        }
+        .gpt-section {
+            margin-top: 2em;
+        }
+        .gpt-card {
+            background-color: #fff;
+            padding: 1em;
+            margin: 1em 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .gpt-card h4 {
+            margin: 0 0 0.5em 0;
+        }
+        .gpt-card p {
+            margin: 0;
         }
     </style>
 </head>
@@ -70,6 +103,7 @@
         <a href="#home">ホーム</a>
         <a href="#about">自己紹介</a>
         <a href="#services">サービス</a>
+        <a href="#gpt">カスタムGPT</a>
         <a href="#contact">お問い合わせ</a>
     </nav>
     <div class="container">
@@ -83,6 +117,25 @@
                 2023年11月からこの分野に専念し、約半年間にわたり革新的なソリューションの開発に努めてきました。<br><br>
                 九州出身で、AIを活用してアニメの世界に新たな興奮と可能性をもたらすことに情熱を持っています。</p>
             </section>
+            <section id="gpt" class="gpt-section">
+                <h3>カスタムGPTの紹介</h3>
+                <div class="gpt-card">
+                    <h4>カスタムGPT 1</h4>
+                    <p>アニメの脚本自動生成GPTです。ユニークなアイデアを次々と提供し、クリエイターのインスピレーションを刺激します。</p>
+                </div>
+                <div class="gpt-card">
+                    <h4>カスタムGPT 2</h4>
+                    <p>キャラクター対話シミュレーションGPTです。ファンとキャラクターのリアルな対話を実現し、没入感を高めます。</p>
+                </div>
+                <div class="gpt-card">
+                    <h4>カスタムGPT 3</h4>
+                    <p>アニメーション制作支援GPTです。アニメーターの作業を効率化し、高品質なアニメーションを短時間で制作できます。</p>
+                </div>
+                <div class="gpt-card">
+                    <h4>カスタムGPT 4</h4>
+                    <p>アニメレビュー分析GPTです。視聴者のレビューを解析し、次のヒット作を予測するデータドリブンなアプローチを提供します。</p>
+                </div>
+            </section>
         </div>
         <aside class="sidebar">
             <h3>目次</h3>
@@ -90,6 +143,7 @@
                 <li><a href="#home">ホーム</a></li>
                 <li><a href="#about">自己紹介</a></li>
                 <li><a href="#services">サービス</a></li>
+                <li><a href="#gpt">カスタムGPT</a></li>
                 <li><a href="#contact">お問い合わせ</a></li>
             </ul>
         </aside>
