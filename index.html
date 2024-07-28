@@ -41,13 +41,13 @@
         }
         .container {
             display: flex;
-            flex-wrap: wrap;
-            width: 80%;
+            flex-wrap: nowrap;
+            width: 90%;
             margin: auto;
             padding: 2em 0;
         }
         .main-content {
-            flex: 2;
+            flex: 3;
             padding: 1em;
             background: white;
             border-radius: 8px;
@@ -60,6 +60,7 @@
             margin-left: 1em;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 200px;
         }
         img {
             display: block;
@@ -82,28 +83,46 @@
         }
         .gpt-card {
             background-color: #fff;
-            padding: 1em;
+            padding: 0.5em;
             margin: 1em 0;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             text-align: center;
         }
         .gpt-card img {
-            max-width: 50px;
+            max-width: 40px;
             margin-bottom: 0.5em;
         }
         .gpt-card h4 {
             margin: 0 0 0.5em 0;
+            font-size: 1.2em;
         }
         .gpt-card p {
-            margin: 0 0 1em 0;
+            margin: 0 0 0.5em 0;
+            font-size: 0.9em;
         }
         .gpt-card a {
             color: #007BFF;
             text-decoration: none;
             font-weight: 600;
+            font-size: 0.9em;
         }
         .gpt-card a:hover {
+            text-decoration: underline;
+        }
+        .sidebar ul {
+            padding: 0;
+            list-style: none;
+        }
+        .sidebar ul li {
+            margin: 0.5em 0;
+        }
+        .sidebar ul li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .sidebar ul li a:hover {
             text-decoration: underline;
         }
     </style>
@@ -124,7 +143,7 @@
             <section id="home">
                 <img src="tashiryoma.jpg" alt="多士亮磨の写真">
                 <h2>多士亮磨</h2>
-                <p>こんにちは、多士亮磨です。<br>
+                <p>こんにちは、私は多士亮磨です。<br>
                 カスタムGPTsのもとで様々なAIツールを開発しています。<br><br>
                 主にアニメ業界を更に盛り上げるためのAIツールを中心に取り組んでいます。<br><br>
                 2023年11月からこの分野に専念し、約半年間にわたり革新的なソリューションの開発に努めてきました。<br><br>
@@ -135,7 +154,7 @@
                 <div class="gpt-card">
                     <img src="GPT1.png" alt="GPT1 Icon">
                     <h4>カスタムGPT 1: AIアニメキャラクタークリエイター＆ストーリージェネレーター</h4>
-                    <p>アニメのキャラクターを自動生成し、ストーリーを作成します。クリエイターに新たなアイデアを提供します。</p>
+                    <p>アニメのキャラクターを自動生成し、ストーリーを作成します。</p>
                     <a href="https://chatgpt.com/g/g-onbkPJ2Lg-ai-anime-character-creator-story-generator">詳細はこちら</a>
                 </div>
                 <div class="gpt-card">
@@ -147,13 +166,13 @@
                 <div class="gpt-card">
                     <img src="GPT3.png" alt="GPT3 Icon">
                     <h4>カスタムGPT 3: Animeify</h4>
-                    <p>写真やイラストをアニメ風に変換するツールです。創造力を発揮してアニメスタイルの作品を作成できます。</p>
+                    <p>写真やイラストをアニメ風に変換するツールです。</p>
                     <a href="https://chatgpt.com/g/g-3wtbu7Lb6-animeify">詳細はこちら</a>
                 </div>
                 <div class="gpt-card">
                     <img src="GPT4.png" alt="GPT4 Icon">
                     <h4>カスタムGPT 4: AIアニメシーンコンポーザー＆アニメーター</h4>
-                    <p>アニメーションのシーンを自動で作成し、アニメーターの作業を効率化します。</p>
+                    <p>アニメーションのシーンを自動で作成します。</p>
                     <a href="https://chatgpt.com/g/g-TyTkSsNIy-ai-anime-scene-composer-animator">詳細はこちら</a>
                 </div>
             </section>
