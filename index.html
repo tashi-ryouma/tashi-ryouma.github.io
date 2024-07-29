@@ -40,7 +40,7 @@
         }
         nav a {
             color: white;
-            margin: 0 20px;
+            margin: 0 10px;
             text-decoration: none;
             font-weight: 600;
             display: inline-block;
@@ -61,9 +61,10 @@
             display: flex;
             flex-wrap: nowrap;
             width: 90%;
+            max-width: 1200px;
             margin: auto;
             padding: 2em 0;
-            justify-content: center;
+            justify-content: space-between;
         }
         .main-content {
             flex: 3;
@@ -71,7 +72,7 @@
             background: white;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            max-width: 800px;
+            width: 100%;
         }
         .sidebar {
             flex: 1;
@@ -81,6 +82,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             max-width: 200px;
+            width: 100%;
         }
         img {
             display: block;
@@ -103,7 +105,7 @@
         }
         .gpt-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr 1fr;
             gap: 1em;
         }
         .gpt-card {
@@ -162,6 +164,20 @@
         }
         .sidebar ul li a:hover::after {
             width: 100%;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .main-content, .sidebar {
+                width: 100%;
+                margin-left: 0;
+                margin-bottom: 1em;
+            }
+            .gpt-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
