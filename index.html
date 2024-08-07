@@ -149,6 +149,48 @@
         .ai-info-card a:hover {
             text-decoration: underline;
         }
+        .gpt-section {
+            margin-top: 2em;
+        }
+        .gpt-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+        }
+        .gpt-card {
+            background-color: #fff;
+            padding: 1em;
+            border: 2px solid #f39c12;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .gpt-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .gpt-card img {
+            max-width: 50px;
+            margin-bottom: 0.5em;
+        }
+        .gpt-card h4 {
+            margin: 0 0 0.5em 0;
+            font-size: 1.2em;
+        }
+        .gpt-card p {
+            margin: 0 0 0.5em 0;
+            font-size: 0.9em;
+        }
+        .gpt-card a {
+            color: #f39c12;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        .gpt-card a:hover {
+            text-decoration: underline;
+        }
         .sidebar ul {
             padding: 0;
             list-style: none;
@@ -187,7 +229,7 @@
                 margin-left: 0;
                 margin-bottom: 1em;
             }
-            .ai-info-grid {
+            .ai-info-grid, .gpt-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -221,7 +263,7 @@
                             <img src="ai-icon2.png" alt="AI Icon 2">
                             <h4>AIと社会</h4>
                             <p>AIが社会に与える影響について議論します。</p>
-                            <a href="#">詳細はこちら</a>
+                                                      <a href="#">詳細はこちら</a>
                         </div>
                     </div>
                 </div>
@@ -238,8 +280,7 @@
                     <div class="gpt-card">
                         <img src="GPT2.png" alt="GPT2 Icon">
                         <h4>カスタムGPT 2: アニメエキスパート</h4>
-                        <p>アニメエキスパートは、アニメ全般に関する知識を提供する究極のガイドです。詳細なアニメレビューからキャラクター分析、ジャンル推奨まで
-                        、AIが高度なアルゴリズムを使用して個別の提案を行い、アニメ視聴体験を向上させます。</p>
+                        <p>アニメエキスパートは、アニメ全般に関する知識を提供する究極のガイドです。詳細なアニメレビューからキャラクター分析、ジャンル推奨まで、AIが高度なアルゴリズムを使用して個別の提案を行い、アニメ視聴体験を向上させます。</p>
                         <a href="https://chatgpt.com/g/g-R0ApRqS04-anime-expert">詳細はこちら</a>
                     </div>
                     <div class="gpt-card">
