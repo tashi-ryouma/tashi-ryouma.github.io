@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>多士亮磨の部屋</title>
-    <meta name="description" content="多士亮磨の公式サイト。カスタムGPTやAIツールの開発者であり、主にアニメ業界に特化したソリューションを提供。">
-    <meta name="keywords" content="多士亮磨, AIツール, カスタムGPT, アニメ, AI開発">
+    <title>AI発信サイト</title>
+    <meta name="description" content="AI関連の最新情報を発信するサイト。">
+    <meta name="keywords" content="AI, 最新情報, 技術, ニュース">
     <meta name="robots" content="index, follow">
-    <meta name="google-site-verification" content="IZioiVQiGo1UC5mTPFqFAeMq17OaYyO33M9Cql7xDoA" />
     <style>
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #eaeaea;
             color: #333;
             display: flex;
             flex-direction: column;
@@ -59,7 +58,10 @@
         nav a:hover::after {
             width: 100%;
         }
-                .container {
+        nav a:hover {
+            color: #007BFF;
+        }
+        .container {
             display: flex;
             flex-wrap: nowrap;
             width: 90%;
@@ -92,7 +94,7 @@
             max-width: 100%;
             height: auto;
             border-radius: 50%;
-            width: 200px;
+            width: 150px;
             transition: transform 0.3s ease;
         }
         img:hover {
@@ -106,15 +108,15 @@
             margin-top: 2em;
             width: 100%;
         }
-        .gpt-section {
+        .ai-info-section {
             margin-top: 2em;
         }
-        .gpt-grid {
+        .ai-info-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1em;
         }
-        .gpt-card {
+        .ai-info-card {
             background-color: #fff;
             padding: 1em;
             border-radius: 8px;
@@ -122,29 +124,29 @@
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        .gpt-card:hover {
+        .ai-info-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 16px rgba(0,0,0,0.2);
         }
-        .gpt-card img {
+        .ai-info-card img {
             max-width: 50px;
             margin-bottom: 0.5em;
         }
-        .gpt-card h4 {
+        .ai-info-card h4 {
             margin: 0 0 0.5em 0;
             font-size: 1.2em;
         }
-        .gpt-card p {
+        .ai-info-card p {
             margin: 0 0 0.5em 0;
             font-size: 0.9em;
         }
-        .gpt-card a {
+        .ai-info-card a {
             color: #007BFF;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9em;
         }
-        .gpt-card a:hover {
+        .ai-info-card a:hover {
             text-decoration: underline;
         }
         .sidebar ul {
@@ -185,7 +187,7 @@
                 margin-left: 0;
                 margin-bottom: 1em;
             }
-            .gpt-grid {
+            .ai-info-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -193,63 +195,41 @@
 </head>
 <body>
     <header>
-        <h1>多士亮磨の部屋</h1>
+        <h1>AI発信サイト</h1>
     </header>
     <nav>
         <a href="#home">ホーム</a>
         <a href="#about">自己紹介</a>
         <a href="#services">サービス</a>
-        <a href="#gpt">カスタムGPT</a>
         <a href="#ai-info">AI関連情報</a>
         <a href="#contact">お問い合わせ</a>
     </nav>
-
-        nav a:hover {
-            color: #007BFF;
-        }
-
     <div class="container">
         <div class="main-content">
             <section id="home">
-                <img src="tashiryoma.jpg" alt="多士亮磨の写真">
-                <h2>多士亮磨</h2>
-                <p>こんにちは、私は多士亮磨です。<br>
-                カスタムGPTsのもとで様々なAIツールを開発しています。<br><br>
-                主にアニメ業界を更に盛り上げるためのAIツールを中心に取り組んでいます。<br><br>
-                2023年11月からこの分野に専念し、約半年間にわたり革新的なソリューションの開発に努めてきました。<br><br>
-                九州出身で、AIを活用してアニメの世界に新たな興奮と可能性をもたらすことに情熱を持っています。<br><br>
-                私の開発したカスタムGPTは、ChatGPTを通じて全てのユーザーが無料で利用できます。<br><br>
-                以下は、私のカスタムGPTのランキングと詳細な説明です。是非ご利用ください。</p>
-            </section>
-            <section id="gpt" class="gpt-section">
-                <h3>カスタムGPTの紹介</h3>
-                <div class="gpt-grid">
-                    <div class="gpt-card">
-                        <img src="GPT1.png" alt="GPT1 Icon">
-                        <h4>カスタムGPT 1: AIアニメキャラクタークリエイター＆ストーリージェネレーター</h4>
-                        <p>AIアニメキャラクタークリエイター＆ストーリージェネレーターは、詳細なアニメキャラクターデザイン、ストーリーテリング、およびカスタマイズ可能なアニメーションを提供するツールです。キャラクターの外見や特性をユーザーが自由に設定
-                        でき、独自の物語を創り出すことができます。</p>
-                        <a href="https://chatgpt.com/g/g-onbkPJ2Lg-ai-anime-character-creator-story-generator">詳細はこちら</a>
-                    </div>
-                    <div class="gpt-card">
-                        <img src="GPT2.png" alt="GPT2 Icon">
-                        <h4>カスタムGPT 2: アニメエキスパート</h4>
-                        <p>アニメエキスパートは、アニメ全般に関する知識を提供する究極のガイドです。詳細なアニメレビューからキャラクター分析、ジャンル推奨まで、AIが高度なアルゴリズムを使用して個別の提案を行い、アニメ視聴体験を向上させます。</p>
-                        <a href="https://chatgpt.com/g/g-R0ApRqS04-anime-expert">詳細はこちら</a>
-                    </div>
-                    <div class="gpt-card">
-                        <img src="GPT3.png" alt="GPT3 Icon">
-                        <h4>カスタムGPT 3: Animeify</h4>
-                        <p>Animeifyは、画像を日本のアニメスタイルに変換するAIツールです。カラーパレットの調整、スタイルの選択、キャラクターの動きや表情の強化、背景の生成、キャラクターデザインのサポートなど、効率的かつ創造的にアニメ制作を支援します。</p>
-                        <a href="https://chatgpt.com/g/g-3wtbu7Lb6-animeify">詳細はこちら</a>
-                    </div>
-                    <div class="gpt-card">
-                        <img src="GPT4.png" alt="GPT4 Icon">
-                        <h4>カスタムGPT 4: AIアニメシーンコンポーザー＆アニメーター</h4>
-                        <p>AIアニメシーンコンポーザー＆アニメーターは、カスタマイズ可能なシーン設定、AI駆動のアニメーション提案、音声や音楽の統合、リアルタイムコラボレーションを提供します。メモリ、画像/ビデオ認識、会話機能を強化しており、アニメ制作者に最適です。</p>
-                        <a href="https://chatgpt.com/g/g-TyTkSsNIy-ai-anime-scene-composer-animator">詳細はこちら</a>
+                <h2>最新のAI情報</h2>
+                <p>ここには2024年5月以降の最新のAI関連情報が表示されます。</p>
+                <div class="ai-info-section">
+                    <div class="ai-info-grid">
+                        <div class="ai-info-card">
+                            <img src="ai-icon1.png" alt="AI Icon 1">
+                            <h4>AI技術の進化</h4>
+                            <p>AI技術は日々進化しています。最新の研究成果を紹介します。</p>
+                            <a href="#">詳細はこちら</a>
+                        </div>
+                        <div class="ai-info-card">
+                            <img src="ai-icon2.png" alt="AI Icon 2">
+                            <h4>AIと社会</h4>
+                            <p>AIが社会に与える影響について議論します。</p>
+                            <a href="#">詳細はこちら</a>
+                        </div>
                     </div>
                 </div>
+            </section>
+            <section id="about">
+                <h3>自己紹介</h3>
+                <img src="tashiryoma.jpg" alt="多士亮磨の写真">
+                <p>こんにちは、私は多士亮磨です。カスタムGPTsのもとで様々なAIツールを開発しています。主にアニメ業界を更に盛り上げるためのAIツールを中心に取り組んでいます。2023年11月からこの分野に専念し、約半年間にわたり革新的なソリューションの開発に努めてきました。九州出身で、AIを活用してアニメの世界に新たな興奮と可能性をもたらすことに情熱を持っています。私の開発したカスタムGPTは、ChatGPTを通じて全てのユーザーが無料で利用できます。</p>
             </section>
             <section id="contact">
                 <h3>お問い合わせ</h3>
@@ -258,19 +238,18 @@
             </section>
         </div>
         <aside class="sidebar">
-            <h3>目次</h3>
+                        <h3>目次</h3>
             <ul>
                 <li><a href="#home">ホーム</a></li>
                 <li><a href="#about">自己紹介</a></li>
                 <li><a href="#services">サービス</a></li>
-                <li><a href="#gpt">カスタムGPT</a></li>
                 <li><a href="#ai-info">AI関連情報</a></li>
                 <li><a href="#contact">お問い合わせ</a></li>
             </ul>
         </aside>
     </div>
     <footer>
-        <p>&copy; 2024 多士亮磨の部屋. All rights reserved.</p>
+        <p>&copy; 2024 AI発信サイト. All rights reserved.</p>
     </footer>
 </body>
 </html>
