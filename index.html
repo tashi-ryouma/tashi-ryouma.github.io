@@ -3,325 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>多士亮磨の最新AI情報</title>
-    <meta name="description" content="AI関連の最新情報を発信するサイト。">
-    <meta name="keywords" content="AI, 最新情報, 技術, ニュース">
-    <meta name="robots" content="index, follow">
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        header {
-            background-color: #1e272e;
-            color: white;
-            text-align: center;
-            padding: 1em 0;
-            width: 100%;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            font-weight: 700;
-        }
-        nav {
-            background-color: #485460;
-            color: white;
-            padding: 0.5em 0;
-            text-align: center;
-            width: 100%;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        nav a {
-            color: white;
-            margin: 0 10px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-        nav a::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 2px;
-            background: #f39c12;
-            transition: width .3s;
-        }
-        nav a:hover::after {
-            width: 100%;
-        }
-        nav a:hover {
-            color: #f39c12;
-        }
-        .container {
-            display: flex;
-            flex-wrap: nowrap;
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-            padding: 2em 0;
-            justify-content: space-between;
-        }
-        .main-content {
-            flex: 3;
-            padding: 2em;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            width: 100%;
-        }
-        .sidebar {
-            flex: 1;
-            background-color: #dfe4ea;
-            padding: 1em;
-            margin-left: 1em;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            max-width: 200px;
-            width: 100%;
-        }
-        img {
-            display: block;
-            margin: 0 auto 1em auto;
-            max-width: 100%;
-            height: auto;
-            border-radius: 50%;
-            width: 150px;
-            transition: transform 0.3s ease;
-        }
-        img:hover {
-            transform: scale(1.1);
-        }
-        footer {
-            background-color: #1e272e;
-            color: white;
-            text-align: center;
-            padding: 1em 0;
-            margin-top: 2em;
-            width: 100%;
-        }
-        .ai-info-section {
-            margin-top: 2em;
-        }
-        .ai-info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1em;
-        }
-        .ai-info-card {
-            background-color: #fff;
-            padding: 1em;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .ai-info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
-        .ai-info-card img {
-            max-width: 50px;
-            margin-bottom: 0.5em;
-        }
-        .ai-info-card h4 {
-            margin: 0 0 0.5em 0;
-            font-size: 1.2em;
-        }
-        .ai-info-card p {
-            margin: 0 0 0.5em 0;
-            font-size: 0.9em;
-        }
-        .ai-info-card a {
-            color: #f39c12;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9em;
-        }
-        .ai-info-card a:hover {
-            text-decoration: underline;
-        }
-        .gpt-section {
-            margin-top: 2em;
-        }
-        .gpt-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1em;
-        }
-        .gpt-card {
-            background-color: #fff;
-            padding: 1em;
-            border: 2px solid #f39c12;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .gpt-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
-        .gpt-card img {
-            max-width: 50px;
-            margin-bottom: 0.5em;
-        }
-        .gpt-card h4 {
-            margin: 0 0 0.5em 0;
-            font-size: 1.2em;
-        }
-        .gpt-card p {
-            margin: 0 0 0.5em 0;
-            font-size: 0.9em;
-        }
-        .gpt-card a {
-            color: #f39c12;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9em;
-        }
-        .gpt-card a:hover {
-            text-decoration: underline;
-        }
-        .sidebar ul {
-            padding: 0;
-            list-style: none;
-        }
-        .sidebar ul li {
-            margin: 0.5em 0;
-        }
-        .sidebar ul li a {
-            color: #333;
-            text-decoration: none;
-            font-weight: 600;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-        .sidebar ul li a::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 2px;
-            background: #f39c12;
-            transition: width .3s;
-        }
-        .sidebar ul li a:hover::after {
-            width: 100%;
-        }
-        .sidebar ul li a:hover {
-            color: #f39c12;
-        }
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                align-items: center;
-            }
-            .main-content, .sidebar {
-                width: 100%;
-                margin-left: 0;
-                margin-bottom: 1em;
-            }
-            .ai-info-grid, .gpt-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <title>多士亮磨のAIアニメラボ！</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 </head>
 <body>
+    <!-- ヘッダー -->
     <header>
-        <h1>多士亮磨の最新AI情報（調整中）</h1>
-    </header>
-    <nav>
-        <a href="#home">ホーム</a>
-        <a href="#about">自己紹介</a>
-        <a href="#services">サービス</a>
-        <a href="#ai-info">AI関連情報</a>
-        <a href="#contact">お問い合わせ</a>
-    </nav>
-    <div class="container">
-        <div class="main-content">
-            <section id="home">
-                <h2>最新のAI情報</h2>
-                <p>ここには最新のAI関連情報が表示されます。</p>
-                <div class="ai-info-section">
-                    <div class="ai-info-grid">
-                        <div class="ai-info-card">
-                            <img src="ai-icon1.png" alt="AI Icon 1">
-                            <h4>最新AI情報</h4>
-                            <p>AIニュース</p>
-                            <a href="#">詳細はこちら</a>
-                        </div>
-                        <div class="ai-info-card">
-                            <img src="ai-icon2.png" alt="AI Icon 2">
-                            <h4>AIと社会</h4>
-                            <p>AIが社会に与える影響について。</p>
-                                                      <a href="#">詳細はこちら</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="gpt" class="gpt-section">
-                <h3>カスタムGPTの紹介</h3>
-                <div class="gpt-grid">
-                    <div class="gpt-card">
-                        <img src="GPT1.png" alt="GPT1 Icon">
-                        <h4>カスタムGPT 1: AIアニメキャラクタークリエイター＆ストーリージェネレーター</h4>
-                        <p>AIアニメキャラクタークリエイター＆ストーリージェネレーターは、詳細なアニメキャラクターデザイン、ストーリーテリング、およびカスタマイズ可能なアニメーションを提供するツールです。</p>
-                        <a href="https://chatgpt.com/g/g-onbkPJ2Lg-ai-anime-character-creator-story-generator">詳細はこちら</a>
-                    </div>
-                    <div class="gpt-card">
-                        <img src="GPT2.png" alt="GPT2 Icon">
-                        <h4>カスタムGPT 2: アニメエキスパート</h4>
-                        <p>アニメエキスパートは、アニメ全般に関する知識を提供する究極のガイドです。詳細なアニメレビューからキャラクター分析、ジャンル推奨まで、AIが高度なアルゴリズムを使用して個別の提案を行い、アニメ視聴体験を向上させます。</p>
-                        <a href="https://chatgpt.com/g/g-R0ApRqS04-anime-expert">詳細はこちら</a>
-                    </div>
-                    <div class="gpt-card">
-                        <img src="GPT3.png" alt="GPT3 Icon">
-                        <h4>カスタムGPT 3: Animeify</h4>
-                        <p>Animeifyは、画像を日本のアニメスタイルに変換するAIツールです。カラーパレットの調整、スタイルの選択、キャラクターの動きや表情の強化、背景の生成、キャラクターデザインのサポートなど、効率的かつ創造的にアニメ制作を支援します。</p>
-                        <a href="https://chatgpt.com/g/g-3wtbu7Lb6-animeify">詳細はこちら</a>
-                    </div>
-                    <div class="gpt-card">
-                        <img src="GPT4.png" alt="GPT4 Icon">
-                        <h4>カスタムGPT 4: AIアニメシーンコンポーザー＆アニメーター</h4>
-                        <p>AIアニメシーンコンポーザー＆アニメーターは、カスタマイズ可能なシーン設定、AI駆動のアニメーション提案、音声や音楽の統合、リアルタイムコラボレーションを提供します。</p>
-                        <a href="https://chatgpt.com/g/g-TyTkSsNIy-ai-anime-scene-composer-animator">詳細はこちら</a>
-                    </div>
-                </div>
-            </section>
-            <section id="about">
-                <h3>自己紹介</h3>
-                <img src="tashiryoma.jpg" alt="多士亮磨の写真">
-                <p>こんにちは、私は多士亮磨です。カスタムGPTsのもとで様々なAIツールを開発しています。主にアニメ業界を更に盛り上げるためのAIツールを中心に取り組んでいます。2023年11月からこの分野に専念し、約半年間にわたり革新的なソリューションの開発に努めてきました。</p>
-            </section>
-            <section id="contact">
-                <h3>お問い合わせ</h3>
-                <p>ご質問やお問い合わせは、以下のメールアドレスまでご連絡ください。</p>
-                <p><a href="mailto:tashiryoma@gmail.com">tashiryoma@gmail.com</a></p>
-            </section>
-        </div>
-        <aside class="sidebar">
-            <h3>目次</h3>
+        <div class="logo">多士亮磨のAIアニメラボ！</div>
+        <nav>
             <ul>
                 <li><a href="#home">ホーム</a></li>
-                <li><a href="#about">自己紹介</a></li>
-                <li><a href="#services">サービス</a></li>
-                <li><a href="#gpt">カスタムGPT</a></li>
-                <li><a href="#ai-info">AI関連情報</a></li>
+                <li><a href="#tools">AIツール</a></li>
+                <li><a href="#works">作品紹介</a></li>
+                <li><a href="#anime-info">最新アニメ情報</a></li>
+                <li><a href="#about">多士亮磨について</a></li>
                 <li><a href="#contact">お問い合わせ</a></li>
             </ul>
-        </aside>
-    </div>
+        </nav>
+    </header>
+
+    <!-- トップページ -->
+    <section id="home" class="main-visual">
+        <h1 class="catchphrase" data-aos="fade-up">憧れのアニメ制作をAIツールで強力支援！</h1>
+        <p class="description" data-aos="fade-up" data-aos-delay="200">アニメの世界をあなたの手で創造しましょう。</p>
+    </section>
+
+    <!-- AIツールランキング -->
+    <section id="tools">
+        <h2 data-aos="fade-right">AIアニメツールランキング</h2>
+        <div class="tools-container">
+            <!-- ツール1 -->
+            <div class="tool" data-aos="zoom-in">
+                <h3>AI Anime Character Creator & Story Generator</h3>
+                <p>理想のキャラクターと物語を、AIで自在にデザイン！</p>
+                <button class="cta-button" onclick="window.location.href='#donate'">ツールを試す</button>
+            </div>
+            <!-- ツール2 -->
+            <div class="tool" data-aos="zoom-in" data-aos-delay="100">
+                <h3>Anime Expert（アニメの専門家）</h3>
+                <p>アニメの全てを解説する、究極のガイドAI</p>
+                <button class="cta-button" onclick="window.location.href='#donate'">ツールを試す</button>
+            </div>
+            <!-- その他のツールも同様に追加 -->
+        </div>
+    </section>
+
+    <!-- 作品紹介 -->
+    <section id="works">
+        <h2 data-aos="fade-left">AIツールで制作された作品</h2>
+        <div class="works-gallery">
+            <!-- 作品の画像と説明を配置 -->
+            <div class="work-item" data-aos="fade-up">
+                <img src="work1.jpg" alt="作品1">
+                <p>この作品はAIを用いて制作されました。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 寄付セクション -->
+    <section id="donate">
+        <h2 data-aos="fade-right">寄付のお願い</h2>
+        <p data-aos="fade-in">多士亮磨への寄付は、アニメ作成の関連のAIツール作成のさらなる発展に役立てられます。(アニメ系)</p>
+        <button class="donate-button" onclick="window.open('https://www.paypal.com/donate', '_blank')">寄付する</button>
+    </section>
+
+    <!-- 自己紹介ページ -->
+    <section id="about">
+        <h2 data-aos="fade-left">多士亮磨の自己紹介</h2>
+        <img src="profile.jpg" alt="多士亮磨の写真" class="profile-pic" data-aos="zoom-in">
+        <p data-aos="fade-in">こんにちは！多士亮磨です。7年前にアニメ『五等分の花嫁』を見てドはまりし、そこから数々のアニメ作品に魅了されてきました。特にお気に入りの作品は『サマータイムレンダ』、『リコリス・リコイル』、『推しの子』、『進撃の巨人』、そして『鬼滅の刃』です。</p>
+    </section>
+
+    <!-- お問い合わせページ -->
+    <section id="contact">
+        <h2 data-aos="fade-up">お問い合わせ</h2>
+        <p>ご意見・ご要望は以下のメールアドレスまでお願いします。</p>
+        <a href="mailto:tashiryouma@mail.com">tashiryouma@mail.com</a>
+    </section>
+
+    <!-- フッター -->
     <footer>
-        <p>&copy; 2024 多士亮磨の最新AI情報. All rights reserved.</p>
+        <p>© 2024 多士亮磨のAIアニメラボ - All Rights Reserved.</p>
     </footer>
+
+    <!-- AOS初期化 -->
+    <script>
+        AOS.init();
+        ScrollReveal().reveal('.tool', { interval: 200 });
+    </script>
 </body>
 </html>
