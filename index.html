@@ -108,6 +108,13 @@
         footer p {
             margin: 0;
         }
+        .language-selector {
+            margin-top: 10px;
+        }
+        .language-selector select {
+            padding: 5px;
+            font-size: 1em;
+        }
     </style>
 </head>
 <body>
@@ -124,6 +131,16 @@
                 <li><a href="#contact">お問い合わせ</a></li>
             </ul>
         </nav>
+        <div class="language-selector">
+            <label for="language">言語を選択:</label>
+            <select id="language" onchange="changeLanguage()">
+                <option value="ja">日本語</option>
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <!-- 他の言語も追加可能 -->
+            </select>
+        </div>
     </header>
 
     <!-- トップページ -->
@@ -205,6 +222,18 @@
     <script>
         AOS.init();
         ScrollReveal().reveal('.tool', { interval: 200 });
+        function changeLanguage() {
+            const selectedLanguage = document.getElementById("language").value;
+            if (selectedLanguage === "en") {
+                window.location.href = "index_en.html";
+            } else if (selectedLanguage === "es") {
+                window.location.href = "index_es.html";
+            } else if (selectedLanguage === "fr") {
+                window.location.href = "index_fr.html";
+            } else {
+                window.location.href = "index.html";
+            }
+        }
     </script>
 </body>
 </html>
