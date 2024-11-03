@@ -133,13 +133,13 @@
         </nav>
         <div class="language-selector">
             <label for="language">言語を選択（Select Language）:</label>
+            <select id="language" onchange="changeLanguage()">
                 <option value="ja">日本語</option>
                 <option value="en">English</option>
                 <option value="es">Español</option>
                 <option value="fr">Français</option>
                 <option value="zh">中文</option>
                 <option value="ko">한국어</option>
-                <!-- 他の言語も追加可能 -->
             </select>
         </div>
     </header>
@@ -201,42 +201,4 @@
         <img src="profile.jpg" alt="多士亮磨の写真" class="profile-pic" data-aos="zoom-in">
         <div class="about-content" data-aos="fade-in">
             <p>こんにちは！多士亮磨です。4年前にアニメ『五等分の花嫁』を見てドはまりし、そこから数々のアニメ作品に魅了されてきました。</p>
-            <p>特にお気に入りの作品は『サマータイムレンダ』、『リコリス・リコイル』、『推しの子』、『進撃の巨人』、そして『鬼滅の刃』です。アニメの魅力に取りつかれた私は、OPENAIがChatGPTやGPTsカスタムの機能を一般開放したのを機に、AIツールの作成を始めました。</p>
-            <p>最初は戸惑いもありましたが、「どうせなら、自分が好きなアニメに関連するツールを作りたい。そして、世界中の人々にアニメの素晴らしさを知ってほしい」という思いで、一歩踏み出しました。</p>
-            <p>アニメは日本が誇る文化であり、私にとって大切な情熱です。そんな情熱を皆さんと共有し、AIツールを通じてアニメ制作をもっと楽しく、もっと身近に感じてもらえたらと願っています。これからもAI技術でアニメの世界を広げていけるよう頑張りますので、どうぞよろしくお願いします。</p>
-        </div>
-    </section>
-
-    <!-- お問い合わせページ -->
-    <section id="contact">
-        <h2 data-aos="fade-up">お問い合わせ</h2>
-        <p>ご意見・ご要望は以下のメールアドレスまでお願いします。</p>
-        <a href="mailto:tashiryouma@mail.com">tashiryouma@mail.com</a>
-    </section>
-
-    <!-- フッター -->
-    <footer>
-        <p>© 2024 多士亮磨のAIアニメラボ - All Rights Reserved.</p>
-    </footer>
-
-    <!-- AOS初期化 -->
-    <script>
-        AOS.init();
-        ScrollReveal().reveal('.tool', { interval: 200 });
-        function changeLanguage() {
-            const selectedLanguage = document.getElementById("language").value;
-            if (selectedLanguage === "en") {
-                window.location.href = "index_en.html";
-            } else if (selectedLanguage === "es") {
-                window.location.href = "index_es.html";
-            } else  else if (selectedLanguage === "zh") {
-                window.location.href = "index_zh.html";
-            } else if (selectedLanguage === "ko") {
-                window.location.href = "index_ko.html";
-            } else {
-                window.location.href = "index.html";
-            }
-        }
-    </script>
-</body>
-</html>
+            <p>特にお気に入りの作品は『サマータイムレンダ』、『リコリス・リコイル』、『推しの子』、『進撃の巨人』、そして『鬼滅の刃』です。アニメ
