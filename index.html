@@ -8,6 +8,12 @@
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'ja', includedLanguages: 'en,es,fr,zh,ko,ja'}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <style>
         body {
             text-align: center;
@@ -131,17 +137,7 @@
                 <li><a href="#contact">お問い合わせ</a></li>
             </ul>
         </nav>
-        <div class="language-selector">
-            <label for="language">言語を選択 (Select Language):</label>
-            <select id="language" onchange="changeLanguage()">
-                <option value="ja">日本語</option>
-                <option value="en">English</option>
-                <option value="es">Español</option>
-                <option value="fr">Français</option>
-                <option value="zh">中文</option>
-                <option value="ko">한국어</option>
-            </select>
-        </div>
+        <div id="google_translate_element" class="language-selector"></div>
     </header>
 
     <!-- トップページ -->
