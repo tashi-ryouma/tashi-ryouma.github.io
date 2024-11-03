@@ -16,7 +16,7 @@
         header, footer {
             background-color: #333;
             color: white;
-            padding: 10px;
+            padding: 20px;
         }
         header nav ul {
             list-style-type: none;
@@ -29,6 +29,26 @@
         header nav ul li a {
             color: white;
             text-decoration: none;
+        }
+        .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            animation: colorChange 10s infinite alternate;
+        }
+        @keyframes colorChange {
+            0% { color: #e6194b; }
+            20% { color: #3cb44b; }
+            40% { color: #ffe119; }
+            60% { color: #4363d8; }
+            80% { color: #f58231; }
+            100% { color: #911eb4; }
+        }
+        header nav ul li a {
+            transition: color 0.3s ease;
+        }
+        header nav ul li a:hover {
+            color: #ffe119;
         }
         .main-visual {
             padding: 50px;
