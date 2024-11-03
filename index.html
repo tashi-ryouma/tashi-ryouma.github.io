@@ -133,11 +133,12 @@
         </nav>
         <div class="language-selector">
             <label for="language">言語を選択（Select Language）:</label>
-            <select id="language" onchange="changeLanguage()">
                 <option value="ja">日本語</option>
                 <option value="en">English</option>
                 <option value="es">Español</option>
                 <option value="fr">Français</option>
+                <option value="zh">中文</option>
+                <option value="ko">한국어</option>
                 <!-- 他の言語も追加可能 -->
             </select>
         </div>
@@ -228,8 +229,10 @@
                 window.location.href = "index_en.html";
             } else if (selectedLanguage === "es") {
                 window.location.href = "index_es.html";
-            } else if (selectedLanguage === "fr") {
-                window.location.href = "index_fr.html";
+            } else  else if (selectedLanguage === "zh") {
+                window.location.href = "index_zh.html";
+            } else if (selectedLanguage === "ko") {
+                window.location.href = "index_ko.html";
             } else {
                 window.location.href = "index.html";
             }
