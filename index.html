@@ -137,6 +137,23 @@
             display: block;
             margin: 20px auto 0;
         }
+        @media (max-width: 768px) {
+            .tools-container {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            .tool {
+                max-width: 90%;
+                margin: 0 auto;
+            }
+            header nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+            header nav ul {
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
