@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="多士亮磨のAIアニメラボは、AIツールを活用してアニメ制作をサポートします。プロのようなキャラクター作成や物語生成が可能なツールを提供し、アニメファンやクリエイターのためのリソースを提供します。">
-    <meta name="keywords" content="AIアニメ, アニメ制作, AIツール, アニメキャラクター作成, 物語生成, アニメ情報, 多士亮磨, AIアニメラボ, アニメ作り方, アニメファン向けAIツール, アニメ視聴">
+    <meta name="keywords" content="AIアニメ, アニメ制作, AIツール, アニメキャラクター作成, 物語生成, アニメ情報, 多士亮磨, AIアニメラボ, アニメ作り方, アニメファン向けAIツール, アニメ視聴, 最新アニメ, アニメガイド, アニメクリエイター">
     <meta name="robots" content="index, follow">
     <title>多士亮磨のAIアニメラボ！</title>
     <link rel="stylesheet" href="styles.css">
@@ -21,11 +21,13 @@
         body {
             text-align: center;
             font-family: 'Kosugi Maru', sans-serif;
+            background-color: #f0f0f0;
         }
         header, footer {
-            background-color: #4a4a4a;
-            color: #f0e68c;
+            background-color: #343434;
+            color: #ffd700;
             padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
         header nav ul {
             list-style-type: none;
@@ -36,7 +38,7 @@
             margin: 0 15px;
         }
         header nav ul li a {
-            color: white;
+            color: #ffd700;
             text-decoration: none;
             transition: color 0.3s ease;
             font-family: 'Kosugi Maru', sans-serif;
@@ -44,7 +46,7 @@
             font-size: 1.1em;
         }
         .logo {
-            font-size: 2.5em;
+            font-size: 2.8em;
             font-weight: bold;
             font-family: 'Kaushan Script', cursive;
             animation: colorChange 10s infinite alternate;
@@ -57,15 +59,13 @@
             80% { color: #f58231; }
             100% { color: #911eb4; }
         }
-        header nav ul li a {
-            transition: color 0.3s ease;
-        }
         header nav ul li a:hover {
-            color: #ffd700;
+            color: #ff6347;
         }
         .main-visual {
             padding: 50px;
-            background-color: #f4f4f4;
+            background: linear-gradient(to bottom, #f0f8ff, #e6e6fa);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         .tools-container, .works-gallery {
             display: flex;
@@ -75,18 +75,18 @@
             margin-top: 30px;
         }
         .tool, .work-item {
-            background-color: #e8e8e8;
+            background-color: #ffffff;
             padding: 20px;
             border-radius: 10px;
             max-width: 300px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
         .tool img {
-            width: 100px;
-            height: 100px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
         .cta-button, .donate-button {
             background-color: #ff4500;
@@ -108,12 +108,13 @@
         }
         section {
             margin: 50px 0;
+            padding: 20px;
         }
         .about-content {
             max-width: 600px;
             margin: 0 auto;
             text-align: left;
-            line-height: 1.6;
+            line-height: 1.8;
         }
         footer p {
             margin: 0;
@@ -128,22 +129,32 @@
         .tools-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
         }
         .tool {
-            max-width: 300px;
+            max-width: 280px;
             margin: 0 auto;
+            text-align: center;
         }
         .cta-button {
             display: block;
             margin: 20px auto 0;
         }
+        .catchphrase {
+            font-family: 'Kaushan Script', cursive;
+            font-size: 2.2em;
+            color: #333;
+        }
+        .description {
+            font-size: 1.2em;
+            color: #555;
+        }
         @media (max-width: 768px) {
             .tools-container {
                 grid-template-columns: 1fr;
-                gap: 10px;
+                gap: 15px;
             }
             .tool {
                 max-width: 90%;
@@ -155,6 +166,15 @@
             }
             header nav ul {
                 text-align: center;
+            }
+            .main-visual {
+                padding: 30px;
+            }
+            .catchphrase {
+                font-size: 1.8em;
+            }
+            .description {
+                font-size: 1em;
             }
         }
     </style>
@@ -190,42 +210,42 @@
             <div class="tool" data-aos="zoom-in">
                 <img src="GPT1.png" alt="AI Anime Character Creator & Story Generator">
                 <h3>AI Anime Character Creator & Story Generator</h3>
-                <p style="text-align: center;">AI Anime Character Creator & Story Generator（アニメ）は、アニメキャラクター作成と物語生成に特化したAIツールです。ユーザーが持つアイデアやイメージを、まるでプロのクリエイターが作り上げるかのように具現化するサポートを提供します。豊富なカスタマイズオプションや直感的な操作で、オリジナリティあふれるキャラクターと魅力的なストーリーを誰でも簡単に作成可能です。</p>
+                <p>AI Anime Character Creator & Story Generator（アニメ）は、アニメキャラクター作成と物語生成に特化したAIツールです。ユーザーが持つアイデアやイメージを、まるでプロのクリエイターが作り上げるかのように具現化するサポートを提供します。豊富なカスタマイズオプションや直感的な操作で、オリジナリティあふれるキャラクターと魅力的なストーリーを誰でも簡単に作成可能です。</p>
                 <button class="cta-button" onclick="window.location.href='https://chatgpt.com/g/g-onbkPJ2Lg-ai-anime-character-creator-story-generator-anime'">ツールを試す</button>
             </div>
             <!-- ツール2 -->
             <div class="tool" data-aos="zoom-in" data-aos-delay="100">
                 <img src="GPT2.png" alt="Anime Expert（アニメの専門家）">
                 <h3>Anime Expert（アニメの専門家）</h3>
-                <p style="text-align: center;">アニメとマンガの「AI搭載アニメエキスパート」は、アニメに関するあらゆる情報を提供する究極のガイドです。詳細なアニメレビューやキャラクター分析、ジャンルごとのおすすめ作品を紹介し、進化したアルゴリズムで個々に合わせた提案を行います。これにより、あなたのアニメ視聴体験がさらに充実します。</p>
+                <p>アニメとマンガの「AI搭載アニメエキスパート」は、アニメに関するあらゆる情報を提供する究極のガイドです。詳細なアニメレビューやキャラクター分析、ジャンルごとのおすすめ作品を紹介し、進化したアルゴリズムで個々に合わせた提案を行います。これにより、あなたのアニメ視聴体験がさらに充実します。</p>
                 <button class="cta-button" onclick="window.location.href='https://chatgpt.com/g/g-R0ApRqS04-anime-expert-animenozhuan-men-jia'">ツールを試す</button>
             </div>
             <!-- ツール3 -->
             <div class="tool" data-aos="zoom-in" data-aos-delay="200">
                 <img src="GPT3.png" alt="Animeify">
                 <h3>Animeify</h3>
-                <p style="text-align: center;">Animeifyは、画像を日本のアニメスタイルに変換するAIツールです。カラーパレットの調整、スタイル選択、キャラクターの動きや表情の強化、背景生成、キャラクターデザインのサポートといった機能を備えており、効率的かつ創造的にアニメ制作を支援します。</p>
+                <p>Animeifyは、画像を日本のアニメスタイルに変換するAIツールです。カラーパレットの調整、スタイル選択、キャラクターの動きや表情の強化、背景生成、キャラクターデザインのサポートといった機能を備えており、効率的かつ創造的にアニメ制作を支援します。</p>
                 <button class="cta-button">ツールを試す</button>
             </div>
             <!-- ツール4 -->
             <div class="tool" data-aos="zoom-in" data-aos-delay="300">
                 <img src="GPT4.png" alt="AI Anime Scene Composer & Animator">
                 <h3>AI Anime Scene Composer & Animator</h3>
-                <p style="text-align: center;">AI Anime Scene Composer & Animatorは、シーン設定のカスタマイズ、AI駆動のアニメーション提案、音声・音楽の統合、リアルタイムのコラボレーション機能を提供します。メモリ機能や画像・動画認識、会話機能も強化されており、アニメクリエイターに最適なツールです。</p>
+                <p>AI Anime Scene Composer & Animatorは、シーン設定のカスタマイズ、AI駆動のアニメーション提案、音声・音楽の統合、リアルタイムのコラボレーション機能を提供します。メモリ機能や画像・動画認識、会話機能も強化されており、アニメクリエイターに最適なツールです。</p>
                 <button class="cta-button">ツールを試す</button>
             </div>
             <!-- ツール5 -->
             <div class="tool" data-aos="zoom-in" data-aos-delay="400">
                 <img src="AIanime1.png" alt="AI Anime World Builder & Interactive Explorer">
                 <h3>AI Anime World Builder & Interactive Explorer</h3>
-                <p style="text-align: center;">カスタマイズ可能な風景や文化、歴史を備えた詳細なアニメの世界を構築し、AIによるインタラクションやクエストで探索を楽しめます。リアルタイムでのコラボレーション、音声インテグレーション、AI学習アシスタント機能も搭載され、アニメクリエイターに最適なツールです。</p>
+                <p>カスタマイズ可能な風景や文化、歴史を備えた詳細なアニメの世界を構築し、AIによるインタラクションやクエストで探索を楽しめます。リアルタイムでのコラボレーション、音声インテグレーション、AI学習アシスタント機能も搭載され、アニメクリエイターに最適なツールです。</p>
                 <button class="cta-button">ツールを試す</button>
             </div>
             <!-- ツール6 -->
             <div class="tool" data-aos="zoom-in" data-aos-delay="500">
                 <img src="AIanime2.png" alt="Anime Story Planner">
                 <h3>Anime Story Planner</h3>
-                <p style="text-align: center;">「Anime Story Planner」ツールは、スクリプトから動的なビジュアルストーリーテリングを実現します。アニメーションや映画制作において、創造性を高め、効率を向上させることを目的としています。</p>
+                <p>「Anime Story Planner」ツールは、スクリプトから動的なビジュアルストーリーテリングを実現します。アニメーションや映画制作において、創造性を高め、効率を向上させることを目的としています。</p>
                 <button class="cta-button">ツールを試す</button>
             </div>
         </div>
