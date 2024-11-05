@@ -49,15 +49,18 @@
             font-size: 2.8em;
             font-weight: bold;
             font-family: 'Kaushan Script', cursive;
-            animation: colorChange 10s infinite alternate;
+            background: linear-gradient(45deg, #ff0000, #ff7300, #ffeb00, #47ff00, #00ffee, #002bff, #d600ff);
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: shine 8s linear infinite;
         }
-        @keyframes colorChange {
-            0% { color: #e6194b; }
-            20% { color: #3cb44b; }
-            40% { color: #ffe119; }
-            60% { color: #4363d8; }
-            80% { color: #f58231; }
-            100% { color: #911eb4; }
+        @keyframes shine {
+            0% {
+                background-position: 0%;
+            }
+            100% {
+                background-position: 200%;
+            }
         }
         header nav ul li a:hover {
             color: #ff6347;
