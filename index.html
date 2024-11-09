@@ -61,21 +61,21 @@
             background: linear-gradient(to bottom, #f0f8ff, #e6e6fa);
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-        .tools-container, .works-gallery {
+        .tools-container, .works-gallery, .anime-info-container {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 20px;
             margin-top: 30px;
         }
-        .tool, .work-item {
+        .tool, .work-item, .anime-info-item {
             background-color: #ffffff;
             padding: 20px;
             border-radius: 10px;
             max-width: 300px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
-        .tool img {
+        .tool img, .anime-info-item img {
             width: 90px;
             height: 90px;
             border-radius: 50%;
@@ -146,11 +146,11 @@
             color: #555;
         }
         @media (max-width: 768px) {
-            .tools-container {
+            .tools-container, .anime-info-container {
                 grid-template-columns: 1fr;
                 gap: 15px;
             }
-            .tool {
+            .tool, .anime-info-item {
                 max-width: 90%;
                 margin: 0 auto;
             }
@@ -241,6 +241,55 @@
                 <h3>Anime Story Planner</h3>
                 <p>「Anime Story Planner」ツールは、スクリプトから動的なビジュアルストーリーテリングを実現します。アニメーションや映画制作において、創造性を高め、効率を向上させることを目的としています。</p>
                 <button class="cta-button">ツールを試す</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 最新アニメ情報 -->
+    <section id="anime-info">
+        <h2 data-aos="fade-left">最新アニメ情報</h2>
+        <div class="anime-info-container">
+            <!-- 最新情報1 -->
+            <div class="anime-info-item" data-aos="fade-up">
+                <img src="anime1.jpg" alt="最新アニメ1">
+                <h3>アニメタイトル1</h3>
+                <p>最新のアニメに関する短い説明文が入ります。ここには概要や視聴の見どころなどを書きます。</p>
+                <button class="cta-button">詳細を見る</button>
+            </div>
+            <!-- 最新情報2 -->
+            <div class="anime-info-item" data-aos="fade-up" data-aos-delay="100">
+                <img src="anime2.jpg" alt="最新アニメ2">
+                <h3>アニメタイトル2</h3>
+                <p>最新のアニメに関する短い説明文が入ります。ここには概要や視聴の見どころなどを書きます。</p>
+                <button class="cta-button">詳細を見る</button>
+            </div>
+            <!-- 最新情報3 -->
+            <div class="anime-info-item" data-aos="fade-up" data-aos-delay="200">
+                <img src="anime3.jpg" alt="最新アニメ3">
+                <h3>アニメタイトル3</h3>
+                <p>最新のアニメに関する短い説明文が入ります。ここには概要や視聴の見どころなどを書きます。</p>
+                <button class="cta-button">詳細を見る</button>
+            </div>
+            <!-- 最新情報4 -->
+            <div class="anime-info-item" data-aos="fade-up" data-aos-delay="300">
+                <img src="anime4.jpg" alt="最新アニメ4">
+                <h3>アニメタイトル4</h3>
+                <p>最新のアニメに関する短い説明文が入ります。ここには概要や視聴の見どころなどを書きます。</p>
+                <button class="cta-button">詳細を見る</button>
+            </div>
+            <!-- 最新情報5 -->
+            <div class="anime-info-item" data-aos="fade-up" data-aos-delay="400">
+                <img src="anime5.jpg" alt="最新アニメ5">
+                <h3>アニメタイトル5</h3>
+                <p>最新のアニメに関する短い説明文が入ります。ここには概要や視聴の見どころなどを書きます。</p>
+                <button class="cta-button">詳細を見る</button>
+            </div>
+            <!-- 最新情報6 -->
+            <div class="anime-info-item" data-aos="fade-up" data-aos-delay="500">
+                <img src="anime6.jpg" alt="最新アニメ6">
+                <h3>アニメタイトル6</h3>
+                <p>最新のアニメに関する短い説明文が入ります。ここには概要や視聴の見どころなどを書きます。</p>
+                <button class="cta-button">詳細を見る</button>
             </div>
         </div>
     </section>
