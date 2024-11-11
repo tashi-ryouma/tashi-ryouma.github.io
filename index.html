@@ -24,10 +24,25 @@
             background-color: #f0f0f0;
         }
         header, footer {
-            background-color: #505050;
+            background: url('haikei1.png') center/cover no-repeat;
             color: #ffd700;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            position: relative;
+        }
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 0;
+        }
+        header * {
+            position: relative;
+            z-index: 1;
         }
         header nav ul {
             list-style-type: none;
@@ -93,7 +108,7 @@
             background-color: #ffffff;
         }
         .anime-info-item img {
-            width: 50%;
+            width: 60%;
             height: auto;
             object-fit: cover;
             margin: 0 auto 15px auto;
