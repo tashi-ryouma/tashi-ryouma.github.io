@@ -22,8 +22,6 @@
             text-align: center;
             font-family: 'Kosugi Maru', sans-serif;
             background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
         }
         header, footer {
             background: url('haikei1.png') center/cover no-repeat;
@@ -88,10 +86,10 @@
             padding: 20px;
         }
         .tools-container {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
         }
         .anime-info-container {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
         }
         .tool, .work-item, .anime-info-item {
             background-color: #ffffff;
@@ -103,7 +101,16 @@
             justify-content: space-between;
             margin-bottom: 20px;
         }
-         40%;
+        .tool img {
+            width: 25%;
+            height: auto;
+            object-fit: cover;
+            margin: 0 auto 15px auto;
+            border-radius: 5px;
+            background-color: #ffffff;
+        }
+        .anime-info-item img {
+            width: 40%;
             height: auto;
             object-fit: cover;
             margin: 0 auto 15px auto;
@@ -166,6 +173,14 @@
             font-size: 1em;
         }
         @media (max-width: 768px) {
+            .tools-container, .anime-info-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .tool, .anime-info-item {
+                width: 90%;
+                margin: 0 auto;
+            }
             header nav ul li {
                 display: block;
                 margin: 10px 0;
@@ -181,14 +196,6 @@
             }
             .description {
                 font-size: 1em;
-            }
-            .tools-container, .anime-info-container, .works-gallery {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            .tool, .anime-info-item, .work-item {
-                width: 90%;
-                margin: 0 auto;
             }
         }
     </style>
@@ -297,7 +304,7 @@
             <div class="anime-info-item" data-aos="fade-up" data-aos-delay="300">
                 <img src="https://img2.animatetimes.com/2024/11/bc2d5b3e606fc2235aefa0ea21cb21f96730a28ae23272_20492966_22f15da4578fb6f81a4fe5cd50ad3a34c6c001fc.jpg" alt="アニメ『村井の恋』第6話先行場面カット＆あらすじ公開！田中の恋心が加速するエクストリーム展開">
                 <h3>アニメ『村井の恋』第6話先行場面カット＆あらすじ公開！田中の恋心が加速するエクストリーム展開</h3>
-                <p>『村井の恋』第6話の先行場面カットとあらすじが公開！田中が村井を気にする気持ちがさらにヒートアップする展開に注目です。WEBラジオ最終回は12月2日配信予定。</p>
+                <p>『村井の恋』第6話の先行場面カットとあらすじが公開！田中が村井を気にする気持ちがさらにヒートアップする展開に注目です。WEBラジオ最終回は12月2日配信予定。</p></p>
                 <p>引用元: <a href="https://www.animatetimes.com/news/details.php?id=1731239977">animatetimes.com</a></p>
                 <button class="cta-button" onclick="window.location.href='https://www.animatetimes.com/news/details.php?id=1731239977'">詳細を見る</button>
             </div>
@@ -358,7 +365,7 @@
     <section id="contact">
         <h2 data-aos="fade-up">お問い合わせ</h2>
         <p>ご意見・ご要望は以下のメールアドレスまでお願いします。</p>
-        <a href="mailto:tashiryouma@mail.com">tashiryouma@mail.com</a>
+        <a href="mailto:tashiryouma@gmail.com">tashiryouma@gmail.com</a>
         <p>また、X（旧Twitter）でも情報を発信しています。フォローはこちらから：</p>
         <a href="https://x.com/tashiryouma7AI" target="_blank">@tashiryouma7AI</a>
     </section>
