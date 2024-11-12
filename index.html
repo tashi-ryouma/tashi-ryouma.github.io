@@ -10,14 +10,14 @@
     <title>多士亮磨のAIアニメラボ！</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({pageLanguage: 'ja', includedLanguages: 'en,es,fr,zh-CN,ko,ja'}, 'google_translate_element');
         }
     </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <style>
         body {
             text-align: center;
@@ -48,26 +48,6 @@
         header nav ul {
             list-style-type: none;
             padding: 0;
-            display: none;
-        }
-        header .hamburger {
-            display: block;
-            cursor: pointer;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 2;
-        }
-        header .hamburger div {
-            width: 30px;
-            height: 3px;
-            background-color: #ffd700;
-            margin: 5px 0;
-        }
-        header nav.open ul {
-            display: flex;
-            flex-direction: column;
-            text-align: center;
         }
         header nav ul li {
             display: inline;
@@ -194,8 +174,19 @@
             font-size: 1em;
         }
         @media (max-width: 768px) {
+            .tools-container, .anime-info-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .tool, .anime-info-item {
+                width: 90%;
+                margin: 0 auto;
+            }
+            header nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
             header nav ul {
-                display: none;
                 text-align: center;
             }
             .main-visual {
@@ -213,13 +204,8 @@
 <body>
     <!-- ヘッダー -->
     <header>
-        <div class="logo" style="color: #32cd32; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">多士亮磨のAIアニメラボ！</div>
+        <div class="logo" style="background: linear-gradient(to right, #32cd32, #98fb98); -webkit-background-clip: text; color: transparent;">多士亮磨のAIアニメラボ！</div>
         <nav>
-            <div class="hamburger" onclick="toggleMenu()">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
             <ul>
                 <li><a href="#home">ホーム</a></li>
                 <li><a href="#tools">AIツール</a></li>
@@ -230,66 +216,59 @@
             </ul>
         </nav>
         <div id="google_translate_element" class="language-selector"></div>
-    <script>
-        function toggleMenu() {
-            const nav = document.querySelector('header nav');
-            nav.classList.toggle('open');
-        }
-    </script>
     </header>
 
     <!-- トップページ -->
     <section id="home" class="main-visual">
-        AIアニメ制作を支援
-        
-        <button class="cta-button" data-aos="fade-up" data-aos-delay="300" onclick="window.location.href='#tools'">無料で始める</button>
+        <h1 class="catchphrase" data-aos="fade-up">憧れのアニメ制作をAIツールで強力支援！</h1>
+        <p class="description" data-aos="fade-up" data-aos-delay="200">アニメの世界をあなたの手で創造しましょう。</p>
     </section>
 
     <!-- AIツールランキング -->
     <section id="tools">
-        AIアニメ制作支援ツールランキング
+        <h2 data-aos="fade-right">AIアニメツールランキング</h2>
         <div class="tools-container">
             <!-- ツール1 -->
             <div class="tool" data-aos="zoom-in">
-                <img src="GPT1.png" alt="AIアニメキャラクター作成と物語生成ツール - AI Anime Character Creator & Story Generator">
+                <img src="GPT1.png" alt="AI Anime Character Creator & Story Generator">
                 <h3>AI Anime Character Creator & Story Generator</h3>
                 <p>AI Anime Character Creator & Story Generator（アニメ）は、アニメキャラクター作成と物語生成に特化したAIツールです。ユーザーが持つアイデアやイメージを、まるでプロのクリエイターが作り上げるかのように具現化するサポートを提供します。豊富なカスタマイズオプションや直感的な操作で、オリジナリティあふれるキャラクターと魅力的なストーリーを誰でも簡単に作成可能です。</p>
-                <button class="cta-button" style="background-color: #ff6b00;" onclick="window.location.href='https://chatgpt.com/g/g-onbkPJ2Lg-ai-anime-character-creator-story-generator-anime'">無料で試す</button>
+                <button class="cta-button" onclick="window.location.href='https://chatgpt.com/g/g-onbkPJ2Lg-ai-anime-character-creator-story-generator-anime'">ツールを試す</button>
             </div>
             <!-- ツール2 -->
             <div class="tool" data-aos="zoom-in" data-aos-delay="100">
-                <img src="GPT2.png" alt="アニメ専門ガイド - Anime Expert（アニメの専門家）">
+                <img src="GPT2.png" alt="Anime Expert（アニメの専門家）">
                 <h3>Anime Expert（アニメの専門家）</h3>
                 <p>アニメとマンガの「AI搭載アニメエキスパート」は、アニメに関するあらゆる情報を提供する終極のガイドです。詳細なアニメレビューやキャラクター分析、ジャンルごとのおすすめ作品を紹介し、進化したアルゴリズムで個々に合わせた提案を行います。これにより、あなたのアニメ観賞体験がさらに充実します。</p>
-                <button class="cta-button" style="background-color: #ff6b00;" onclick="window.location.href='https://chatgpt.com/g/g-R0ApRqS04-anime-expert-animenozhuan-men-jia'">無料で試す</button>
+                <button class="cta-button" onclick="window.location.href='https://chatgpt.com/g/g-R0ApRqS04-anime-expert-animenozhuan-men-jia'">ツールを試す</button>
             </div>
             <!-- ツール3 -->
             <div class="tool" data-aos="zoom-in" data-aos-delay="200">
-                <img src="GPT3.png" alt="画像をアニメスタイルに変換するツール - Animeify">
+                <img src="GPT3.png" alt="Animeify">
                 <h3>Animeify</h3>
                 <p>Animeifyは、画像を日本のアニメスタイルに変換するAIツールです。カラーパレットの調整、スタイル選択、キャラクターの動きや表情の強化、背景生成、キャラクターデザインのサポートといった機能を備えており、効率的かつ創造的にアニメ制作を支援します。</p>
-                <button class="cta-button" style="background-color: #ff6b00;" onclick="window.location.href='https://chatgpt.com/g/g-3wtbu7Lb6-animeify'">無料で試す</button>
+                <button class="cta-button" onclick="window.location.href='https://chatgpt.com/g/g-3wtbu7Lb6-animeify'">ツールを試す</button>
             </div>
             <!-- ツール4 -->
             <div class="tool" data-aos="zoom-in" data-aos-delay="300">
-                <img src="GPT4.png" alt="AIアニメシーン作成とアニメーター - AI Anime Scene Composer & Animator">
+                <img src="GPT4.png" alt="AI Anime Scene Composer & Animator">
                 <h3>AI Anime Scene Composer & Animator</h3>
                 <p>AI Anime Scene Composer & Animatorは、シーン設定のカスタマイズ、AI駆動のアニメーション提案、音声・音楽の統合、リアルタイムのコラボレーション機能を提供します。メモリ機能や画像・動画認識、会話機能も強化されており、アニメクリエイターに最適なツールです。</p>
-                <button class="cta-button" style="background-color: #ff6b00;" onclick="window.location.href='https://chatgpt.com/g/g-TyTkSsNIy-ai-anime-scene-composer-animator-anime'">無料で試す</button>
+                <button class="cta-button" onclick="window.location.href='https://chatgpt.com/g/g-TyTkSsNIy-ai-anime-scene-composer-animator-anime'">ツールを試す</button>
             </div>
             <!-- ツール5 -->
             <div class="tool" data-aos="zoom-in" data-aos-delay="400">
-                <img src="AIanime1.png" alt="AIアニメの世界構築とインタラクティブ探索ツール - AI Anime World Builder & Interactive Explorer">
+                <img src="AIanime1.png" alt="AI Anime World Builder & Interactive Explorer">
                 <h3>AI Anime World Builder & Interactive Explorer</h3>
                 <p>カスタマイズ可能な風景や文化、歴史を備えた詳細なアニメの世界を構築し、AIによるインタラクションやクエストで探索を楽しめます。リアルタイムでのコラボレーション、音声インテグレーション、AI学習アシスタント機能も搭載され、アニメクリエイターに最適なツールです。</p>
-                <button class="cta-button" style="background-color: #ff6b00;" onclick="window.location.href='https://chatgpt.com/g/g-k96LS6y1x-ai-anime-world-builder-interactive-explorer-anime'">無料で試す</button>
+                <button class="cta-button" onclick="window.location.href='https://chatgpt.com/g/g-k96LS6y1x-ai-anime-world-builder-interactive-explorer-anime'">ツールを試す</button>
             </div>
             <!-- ツール6 -->
             <div class="tool" data-aos="zoom-in" data-aos-delay="500">
-                <img src="AIanime2.png" alt="アニメストーリープランナー - Anime Story Planner">
+                <img src="AIanime2.png" alt="Anime Story Planner">
                 <h3>Anime Story Planner</h3>
                 <p>「Anime Story Planner」ツールは、スクリプトから動的なビジュアルストーリーテリングを実現します。アニメーションや映画制作において、創造性を高め、効率を向上させることを目的としています。</p>
-                <button class="cta-button" style="background-color: #ff6b00;" onclick="window.location.href='https://chatgpt.com/g/g-phmiTiUxH-anime-story-planner'">無料で試す</button>
+                <button class="cta-button" onclick="window.location.href='https://chatgpt.com/g/g-phmiTiUxH-anime-story-planner'">ツールを試す</button>
             </div>
         </div>
     </section>
@@ -300,7 +279,7 @@
         <div class="anime-info-container">
             <!-- 最新情報1 -->
             <div class="anime-info-item" data-aos="fade-up">
-                <img src="https://cimg.kgl-systems.io/camion/files/23794/thumbnail_vrcF.jpg?x=1280" alt="アニメ『忘却バッテリー』第2期制作決定 - 清峰葉流火と要圭の物語">
+                <img src="https://cimg.kgl-systems.io/camion/files/23794/thumbnail_vrcF.jpg?x=1280" alt="アニメ『忘却バッテリー』第2期制作決定！清峰葉流火と要圭の新たな物語が再び動き出す">
                 <h3>アニメ『忘却バッテリー』第2期制作決定！清峰葉流火と要圭の新たな物語が再び動き出す</h3>
                 <p>2024年4月に大好評を博したアニメ『忘却バッテリー』の第2期制作が決定！清峰葉流火役の増田俊樹さん、要圭役の宮野真守さんによるボイス付き告知映像が公開され、さらに盛り上がりを見せています。</p>
                 <p>引用元: <a href="https://www.famitsu.com/article/202411/23794">ファミ通.com</a></p>
@@ -308,7 +287,7 @@
             </div>
             <!-- 最新情報2 -->
             <div class="anime-info-item" data-aos="fade-up" data-aos-delay="100">
-                <img src="https://cimg.kgl-systems.io/camion/files/23733/thumbnail_pwqq.jpg?x=1280" alt="アニメ『ゆるキャン△ SEASON4』制作決定 - 特別イラスト公開">
+                <img src="https://cimg.kgl-systems.io/camion/files/23733/thumbnail_pwqq.jpg?x=1280" alt="アニメ『ゆるキャン△ SEASON4』制作決定！なでしこたちの後輩たちが描かれた特別イラスト公開">
                 <h3>アニメ『ゆるキャン△ SEASON4』制作決定！なでしこたちの後輩たちが描かれた特別イラスト公開</h3>
                 <p>『ゆるキャン△』シリーズの第4期制作がついに決定！原作者・あfろ氏による、なでしこたちの後輩キャラクター瑞浪絵真と中津川メイのイラスト＆コメントも到着しました。</p>
                 <p>引用元: <a href="https://www.famitsu.com/article/202411/23733">ファミ通.com</a></p>
@@ -316,7 +295,7 @@
             </div>
             <!-- 最新情報3 -->
             <div class="anime-info-item" data-aos="fade-up" data-aos-delay="200">
-                <img src="https://img2.animatetimes.com/2024/11/139c88f9686c73e61014e524e25fe0756730b7c6af59a9_22702726_25d04e8a0c15c915edbb8d06f8b59a3a6f4f50d8.jpg" alt="アニメ『アオのハコ』追加キャストとコラボイベント">
+                <img src="https://img2.animatetimes.com/2024/11/139c88f9686c73e61014e524e25fe0756730b7c6af59a9_22702726_25d04e8a0c15c915edbb8d06f8b59a3a6f4f50d8.jpg" alt="『アオのハコ』追加キャストに小野友樹さん＆小野賢章さん決定！サンシャイン水族館でのコラボイベントも開催">
                 <h3>『アオのハコ』新キャスト発表＆サンシャイン水族館コラボ開催！青春が動き出す特別イベントを見逃すな</h3>
                 <p>アニメ『アオのハコ』に小野友樹さん・小野賢章さんが追加キャストとして参加決定！11月15日からはサンシャイン水族館とのコラボイベントも開催されます。</p>
                 <p>引用元: <a href="https://www.animatetimes.com/news/details.php?id=1731244414">animatetimes.com</a></p>
@@ -351,7 +330,7 @@
 
     <!-- 作品紹介 -->
     <section id="works">
-        AIアニメ制作支援ツールで制作された作品
+        <h2 data-aos="fade-left">AIアニメツールで制作された作品</h2>
         <div class="works-gallery" style="justify-content: center;">
             <div class="work-item" data-aos="fade-up" style="margin: 0 auto;">
                 <img src="work1.jpg" alt="作品1">
