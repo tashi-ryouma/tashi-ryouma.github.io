@@ -127,6 +127,16 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
+/* コンテナ全体の中央配置と左揃え */
+.container {
+    display: flex;
+    justify-content: center; /* 全体を中央に配置 */
+    align-items: center; /* 上下の中央に配置 */
+    flex-direction: column; /* 縦に配置 */
+    min-height: 100vh; /* 画面の高さを確保 */
+    padding: 20px; /* 余白をつけて圧迫感を緩和 */
+}
+
 .tool-intro {
     max-width: 800px; /* コンテンツの幅を設定 */
     margin: 0 auto; /* コンテンツ全体を中央に配置 */
@@ -139,16 +149,6 @@
     text-align: left; /* 文章は左揃え */
 }
 
-/* コンテナ全体の中央配置と左揃え */
-.container {
-    display: flex;
-    justify-content: center; /* 全体を中央に配置 */
-}
-
-.container .tool-intro {
-    flex: 0 1 auto;
-    text-align: left; /* テキストは左揃え */
-}
     .tool-intro h2 {
         font-size: 2em; /* Emphasize the main title */
         color: #333; /* Darker color for contrast */
