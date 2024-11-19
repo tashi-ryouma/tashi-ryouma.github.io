@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9447077529640944"crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9447077529640944" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="多士亮磨のAIアニメラボは、AIツールを活用してアニメ制作をサポートします。プロのようなキャラクター作成や物語生成が可能なツールを提供し、アニメファンやクリエイターのためのリソースを提供します。">
@@ -79,125 +79,30 @@
             background: linear-gradient(to bottom, #f0f8ff, #e6e6fa);
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-        .tools-container, .works-gallery, .anime-info-container {
-            display: grid;
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .tools-container {
-            grid-template-columns: repeat(3, 1fr);
-        }
-        .anime-info-container {
-            grid-template-columns: repeat(3, 1fr);
-        }
-        .tool, .work-item, .anime-info-item {
-            background-color: #ffffff;
+        .guide-section {
+            background-color: #fffacd;
+            margin: 40px auto;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-        .tool img {
-            width: 25%;
-            height: auto;
-            object-fit: cover;
-            margin: 0 auto 15px auto;
-            border-radius: 5px;
-            background-color: #ffffff;
-        }
-        .anime-info-item img {
-            width: 40%;
-            height: auto;
-            object-fit: cover;
-            margin: 0 auto 15px auto;
-            border-radius: 5px;
-            background-color: #ffffff;
-        }
-        .cta-button, .donate-button {
-            background-color: #ff4500;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .cta-button:hover, .donate-button:hover {
-            background-color: #ff6347;
-        }
-        .profile-pic {
-            width: 150px;
-            height: auto;
-            margin-bottom: 20px;
-        }
-        section {
-            margin: 50px 0;
-            padding: 20px;
-        }
-        .about-content {
-            max-width: 600px;
-            margin: 0 auto;
+            max-width: 900px;
             text-align: left;
-            line-height: 1.8;
         }
-        footer {
-            background: url('haikei2.png') center/cover no-repeat;
-            color: #ffd700;
-            padding: 20px;
-            position: relative;
+        .guide-section h2 {
+            font-size: 2em;
+            color: #ff4500;
+            text-align: center;
         }
-        footer::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: 0;
+        .guide-section h3 {
+            font-size: 1.5em;
+            margin-top: 20px;
         }
-        footer p {
-            margin: 0;
-            position: relative;
-            z-index: 1;
-        }
-        .language-selector {
-            margin-top: 10px;
-        }
-        .language-selector select {
-            padding: 5px;
+        .guide-section p, .guide-section li {
             font-size: 1em;
+            line-height: 1.6;
         }
-        @media (max-width: 768px) {
-            .tools-container, .anime-info-container {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            .tool, .anime-info-item {
-                width: 90%;
-                margin: 0 auto;
-            }
-            header nav ul li {
-                display: block;
-                margin: 10px 0;
-            }
-            header nav ul {
-                text-align: center;
-            }
-            .main-visual {
-                padding: 30px;
-            }
-            .catchphrase {
-                font-size: 1.8em;
-            }
-            .description {
-                font-size: 1em;
-            }
+        .guide-section ul, .guide-section ol {
+            margin-left: 20px;
         }
     </style>
 </head>
@@ -224,6 +129,59 @@
         <p class="description" data-aos="fade-up" data-aos-delay="200">アニメの世界をあなたの手で創造しましょう。</p>
     </section>
 
+    <!-- 取扱説明書とアニメ作りのコツ -->
+    <section class="guide-section" id="popular-tool-guide">
+        <h2>AI Anime Character Creator & Story Generator 取扱説明書</h2>
+        <h3>はじめに</h3>
+        <p>AI Anime Character Creator & Story Generatorは、あなたのアイデアをアニメキャラクターやストーリーとして具現化するためのツールです。プロのようなキャラクターデザインや深みのある物語を、誰でも簡単に作成できます。以下では、ツールの使い方やアニメ制作の基本をステップバイステップで説明します。</p>
+
+        <h3>1. ツールの主な特徴</h3>
+        <ul>
+            <li><strong>キャラクター作成機能</strong></li>
+            <ul>
+                <li>外見カスタマイズ: 髪型、髪色、目の形、服装、アクセサリーまで細部を自由に設定可能。</li>
+                <li>性格と特徴の設定: 明るい、内向的、冒険好きなど、キャラクターの性格や特性を選択できます。</li>
+                <li>カラーパレット提案: キャラクターの配色をアート理論に基づき自動提案。</li>
+            </ul>
+            <li><strong>ストーリー生成機能</strong></li>
+            <ul>
+                <li>ジャンル選択: 冒険、恋愛、ファンタジーなど、好みのジャンルに合わせてストーリーを作成。</li>
+                <li>詳細なバックストーリー: キャラクターごとの背景を自動生成し、物語に深みを追加。</li>
+                <li>自由なプロット編集: AI生成後にストーリーを細かくカスタマイズ可能。</li>
+            </ul>
+        </ul>
+
+        <h3>2. 基本的なアニメ作成の流れ</h3>
+        <ol>
+            <li><strong>Step 1: キャラクターを作成する</strong>
+                <ul>
+                    <li>キャラクターの性別、年齢、身長、雰囲気などを選びます。</li>
+                    <li>髪型、目の形、服装、アクセサリーを自由に設定。色選びはカラーパレット機能を活用してください。</li>
+                    <li>明るい、冷静、ロマンチストなど性格を選びます。また、特殊スキル（魔法、剣術など）も付与可能です。</li>
+                </ul>
+            </li>
+            <li><strong>Step 2: ストーリーを構築する</strong>
+                <ul>
+                    <li>ジャンルを選択: 冒険、ミステリー、学園ドラマなどから選んでください。</li>
+                    <li>プロットを生成: AIが物語の概要を提案します。必要に応じて、プロットの流れを編集可能です。</li>
+                </ul>
+            </li>
+            <li><strong>Step 3: シーンをアニメ化する</strong>
+                <ul>
+                    <li>場面の設定: ストーリーのシーンごとに背景や動作を選びます。</li>
+                    <li>動きと表情を設定: キャラクターがどのように動き、どのような感情を見せるかを決めましょう。</li>
+                    <li>シミュレーションを実行: シーン全体をプレビューし、自然な動きや感情表現を確認します。</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>3. 基礎的なアニメ制作のコツ</h3>
+        <ul>
+            <li><strong>キャラクターデザイン</strong>: バランスの取れた配色でキャラクター全体のトーンを統一しましょう。</li>
+            <li><strong>ストーリーテリング</strong>: 明確な起承転結を意識し、読者や視聴者を引き込む展開を目指してください。</li>
+            <li><strong>アニメーション</strong>: 動きのリアルさを追求し、テンポを調整することで、自然な演出が可能になります。</li>
+        </ul>
+    </section>
     <!-- AIツールランキング -->
     <section id="tools">
         <h2 data-aos="fade-right">AIアニメツールランキング</h2>
