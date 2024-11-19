@@ -9,39 +9,39 @@
     <meta name="robots" content="index, follow">
     <title>多士亮磨のAIアニメラボ！</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Kosugi+Maru&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             text-align: center;
-            font-family: 'Kosugi Maru', sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
         }
         .guide-section {
-            background: linear-gradient(to bottom right, #fceabb, #f8b500);
+            background: linear-gradient(to bottom right, #2c2c2c, #1a1a1a);
             margin: 40px auto;
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
             max-width: 900px;
             text-align: left;
-            font-family: 'Dancing Script', cursive;
+            color: #f0f0f0;
         }
         .guide-section h2 {
             font-size: 2.4em;
-            color: #6a1b9a;
+            color: #ffffff;
             text-align: center;
-            font-family: 'Dancing Script', cursive;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            font-family: 'Playfair Display', serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
         }
         .guide-section h3 {
             font-size: 1.8em;
-            color: #3e2723;
+            color: #d9d9d9;
             margin-top: 20px;
         }
         .guide-section p {
             font-size: 1.2em;
             line-height: 1.8;
-            color: #4e342e;
+            color: #e0e0e0;
         }
         .guide-section ul {
             margin-left: 20px;
@@ -53,7 +53,7 @@
             margin-bottom: 10px;
         }
         .guide-section ul li::marker {
-            color: #6a1b9a;
+            color: #999999;
         }
         .guide-section ol {
             margin-left: 20px;
@@ -65,43 +65,108 @@
             margin-bottom: 10px;
         }
         .guide-section a {
-            color: #ef6c00;
+            color: #f39c12;
             text-decoration: none;
             font-weight: bold;
         }
         .guide-section a:hover {
-            color: #ff9800;
+            color: #f1c40f;
+        }
+        .tool img, .anime-info-item img, .work-item img {
+            width: 100%;
+            max-width: 300px; /* 最大サイズを制限 */
+            height: auto;
+            margin: 0 auto 15px auto;
+            border-radius: 10px;
+        }
+        .cta-button {
+            background-color: #333333;
+            color: #f0f0f0;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #555555;
+        }
+        @media (max-width: 768px) {
+            .guide-section {
+                padding: 20px;
+                font-size: 0.9em;
+            }
+            .guide-section h2 {
+                font-size: 2em;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- トップページ -->
+    <section id="home" class="main-visual">
+        <h1 class="catchphrase" data-aos="fade-up">憧れのアニメ制作をAIツールで強力支援！</h1>
+        <p class="description" data-aos="fade-up" data-aos-delay="200">アニメの世界をあなたの手で創造しましょう。</p>
+    </section>
+    <!-- 取扱説明書とアニメ作りのコツ -->
     <section class="guide-section" id="popular-tool-guide">
         <h2>一番人気のAIツール AI Anime Character Creator & Story Generator</h2>
         <h3>はじめに</h3>
         <p>
             ようこそ！AI Anime Character Creator & Story Generatorへ！<br>
-            このツールは、あなたのアイデアを「まるでプロが作ったみたいな」アニメキャラクターや物語に変えてしまう夢のようなツールです。初心者でも安心して使えるシンプルな操作で、アニメ制作の世界に飛び込んでみませんか？<br>
-            さあ、あなたの頭の中のイメージを形にする旅を始めましょう！
-        </p>
-        <h3>1. ツールの主な特徴</h3>
+        このツールは、あなたのアイデアを「まるでプロが作ったみたいな」アニメキャラクターや物語に変えてしまう夢のようなツールです。初心者でも安心して使えるシンプルな操作で、アニメ制作の世界に飛び込んでみませんか？<br>
+        さあ、あなたの頭の中のイメージを形にする旅を始めましょう！
+    </p>
+
+    <h3>1. ツールの主な特徴</h3>
+    <ul>
+        <li><strong>キャラクター作成機能</strong></li>
         <ul>
-            <li><strong>キャラクター作成機能:</strong> 髪型や髪色、目の形、服装、アクセサリーまで自由自在。</li>
-            <li><strong>ストーリー生成機能:</strong> ジャンル選択や詳細なバックストーリー設定が可能。</li>
-            <li><strong>アニメーションシミュレーション:</strong> 動きや表情を細かく設定できます。</li>
+            <li>外見カスタマイズ: 髪型や髪色、目の形、服装、アクセサリーまで自由自在。細かい設定が可能だから、「このキャラ、私が考えたんだ！」と胸を張れる仕上がりに！</li>
+            <li>性格と特徴の設定: 明るく元気な冒険家？それとも、冷静沈着な剣士？性格や特徴を選んで、キャラに命を吹き込みましょう。</li>
+            <li>カラーパレット提案: 色の組み合わせに迷ったら、ツールにお任せ！アート理論に基づいた配色を自動提案してくれるので、キャラがグッと映える仕上がりになります。</li>
         </ul>
-        <h3>2. 基本的なアニメ作成の流れ</h3>
-        <ol>
-            <li><strong>Step 1:</strong> キャラクターの基礎設定を行い、外見をカスタマイズ。</li>
-            <li><strong>Step 2:</strong> ストーリーのジャンルを選択し、プロットをカスタマイズ。</li>
-            <li><strong>Step 3:</strong> シーンをアニメ化し、動きや背景を調整。</li>
-        </ol>
-        <h3>3. 基礎的なアニメ制作のコツ</h3>
+        <li><strong>ストーリー生成機能</strong></li>
         <ul>
-            <li><strong>キャラクターデザイン:</strong> 個性的な配色とアクセサリーで魅力アップ。</li>
-            <li><strong>ストーリーテリング:</strong> 起承転結を意識して感動的な物語を作りましょう。</li>
-            <li><strong>アニメーション:</strong> 自然な動きと表情を重視してリアリティを追求。</li>
+            <li>ジャンル選択: 冒険？恋愛？それともファンタジー？好きなジャンルを選ぶだけで、物語の舞台が決まります。</li>
+            <li>詳細なバックストーリー: キャラクター一人ひとりに個性的な背景を設定し、物語の深みをグッとアップ。例えば「謎の失われた記憶を探して旅をする少年」など、ドラマ性のある設定が自動生成されます。</li>
+            <li>自由なプロット編集: AIが提案したストーリーをもとに、細かい部分を自由に編集可能。あなたらしさを加えて、唯一無二の物語を作りましょう！</li>
         </ul>
-    </section>
+    </ul>
+
+    <h3>2. 基本的なアニメ作成の流れ</h3>
+    <ol>
+        <li><strong>Step 1: キャラクターを作成する</strong>
+            <ul>
+                <li>キャラクターの基礎設定: 性別、年齢、身長、そして全体の雰囲気などを決めます。</li>
+                <li>外見をカスタマイズ: 髪型や目の形、服装、アクセサリーなど、細部までデザイン可能。<br>
+                <strong>コツ</strong>: カラーパレット提案機能を使って、キャラに合う色を選ぶとグッと雰囲気が出ます！</li>
+                <li>性格とスキルを設定: 性格はキャラの魅力そのもの！さらに、魔法や剣術などの特殊スキルを追加して個性を際立たせましょう。</li>
+            </ul>
+        </li>
+        <li><strong>Step 2: ストーリーを構築する</strong>
+            <ul>
+                <li>ジャンルを選択: 冒険、恋愛、学園ドラマ……どれにする？</li>
+                <li>AIがプロットを提案: ストーリーの概要をAIが自動生成。設定に応じた展開を提案してくれるので、ゼロから考える手間が省けます！</li>
+                <li>プロットをカスタマイズ: 提案されたプロットをあなた好みに編集。もっと感動的にするも良し、コミカルな要素を足すも良し。</li>
+            </ul>
+        </li>
+        <li><strong>Step 3: シーンをアニメ化する</strong>
+            <ul>
+                <li>場面を設定: 背景やシーンを選び、物語の舞台を作り上げます。</li>
+                <li>動きと表情を設定: キャラクターの動きや感情を演出。例えば、緊張している場面では手が震える動きを入れるなど、細かい調整も簡単です。</li>
+                <li>シミュレーションを実行: シーン全体をプレビューして、細かい部分を調整します。</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h3>3. 基礎的なアニメ制作のコツ</h3>
+    <ul>
+        <li><strong>キャラクターデザイン</strong>: シルエットで印象を残し、色やアクセサリーでキャラの個性を引き立てましょう。</li>
+        <li><strong>ストーリーテリング</strong>: 明確なテーマと起承転結を意識し、キャラクターの成長や感情の波を描きましょう。</li>
+        <li><strong>アニメーション</strong>: 動きのリアリティを追求し、背景との調和で作品全体の一体感を高めましょう。</li>
+    </ul>
+</section>
     <!-- AIツールランキング -->
     <section id="tools">
         <h2 data-aos="fade-right">AIアニメツールランキング</h2>
