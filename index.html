@@ -20,11 +20,12 @@
             padding: 0;
         }
         header { position: fixed; width: 100%; background: #000; padding: 10px 20px; display: flex; justify-content: center; text-align: center; align-items: center; z-index: 100; }
-        header .logo { color: #ffffff; font-weight: bold; margin: 0 auto; }
+        header .logo { color: #ffffff; font-weight: bold; margin-right: auto; }
         header nav {
             display: flex;
+            margin-left: auto;
         }
-        header nav ul { list-style: none; padding: 0; margin: 0 auto; display: flex; justify-content: center; gap: 20px; }
+        header nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 20px; }
         header nav ul li {
             display: block;
         }
@@ -94,158 +95,8 @@
         }
         #google_translate_element {
             position: fixed;
-            top: 100px;
-            left: 20px;
-            z-index: 101;
-        }
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                padding: 10px;
-            }
-            header nav ul {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-            .main-visual h1 {
-                font-size: 4em;
-                margin-top: 100px;
-            }
-            .main-visual img {
-                width: 400px;
-            }
-            .cta-button {
-                font-size: 1.2em;
-                padding: 10px 20px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="logo">多士亮磨のAIアニメラボ</div>
-        <nav>
-            <ul>
-                <li><a href="#">ホーム</a></li>
-                <li><a href="#tools">AIツール紹介</a></li>
-                <li><a href="#community">アニメコミュニティ</a></li>
-                <li><a href="#news">アニメニュース</a></li>
-                <li><a href="#about">自己紹介</a></li>
-                <li><a href="#contact">お問い合わせ</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <div class="main-visual">
-        <div>
-            <img src="WEBsaitomain.png" alt="Main Visual Anime Characters">
-            <h1>新世代のアニメ制作を<br>AIで切り拓く</h1>
-            <button class="cta-button">今すぐツールを試してみる</button>
-        </div>
-    </div>
-    
-    <div id="google_translate_element"></div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>新世代のアニメ制作をAIで切り拓く</title>
-    <link rel="stylesheet" href="styles.css">
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'ja', includedLanguages: 'en,fr,zh-CN,ko'}, 'google_translate_element');
-        }
-    </script>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #121212;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-        }
-        header { position: fixed; width: 100%; background: #000; padding: 10px 20px; display: flex; justify-content: center; text-align: center; align-items: center; z-index: 100; }
-        header .logo { color: #ffffff; font-weight: bold; margin: 0 auto; }
-        header nav {
-            display: flex;
-        }
-        header nav ul { list-style: none; padding: 0; margin: 0 auto; display: flex; justify-content: center; gap: 20px; }
-        header nav ul li {
-            display: block;
-        }
-        header nav ul li a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        }
-        .main-visual {
-            height: 100vh;
-            background-color: #121212;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-        }
-        .main-visual::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 1;
-        }
-        .main-visual img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 700px;
-            height: auto;
-            z-index: 3;
-            animation: float-animation 4s ease-in-out infinite;
-        }
-        @keyframes float-animation {
-            0%, 100% { transform: translate(-50%, -50%) translateY(0); }
-            50% { transform: translate(-50%, -50%) translateY(-30px); }
-        }
-        .main-visual h1 {
-            position: relative;
-            font-size: 7em;
-            color: #ffffff;
-            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
-            z-index: 4;
-            line-height: 1.2;
-            margin-top: 200px;
-        }
-        .cta-button {
-            position: relative;
-            margin-top: 40px;
-            background-color: #ff4500;
-            color: #ffffff;
-            border: none;
-            padding: 15px 30px;
-            cursor: pointer;
-            font-size: 1.5em;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            z-index: 4;
-        }
-        .cta-button:hover {
-            background-color: #ff6347;
-        }
-        #google_translate_element {
-            position: fixed;
-            top: 100px;
-            left: 20px;
+            top: 20px;
+            right: 20px;
             z-index: 101;
         }
         @media (max-width: 768px) {
