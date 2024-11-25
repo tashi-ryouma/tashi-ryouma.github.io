@@ -69,11 +69,11 @@
             width: 500px;
             height: auto;
             z-index: 4;
-            animation: blink 1.5s step-start infinite alternate;
+            animation: pulse 2s ease-in-out infinite;
         }
-        @keyframes blink {
-            0% { opacity: 1; }
-            100% { opacity: 0.7; }
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+            50% { transform: translate(-50%, -50%) scale(1.05); opacity: 0.9; }
         }
         .main-visual h1 {
             position: relative;
