@@ -52,9 +52,6 @@
             font-weight: bold;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
-        .menu-toggle {
-            display: none;
-        }
         .main-visual {
             height: 100vh;
             background-color: #121212;
@@ -115,32 +112,14 @@
         }
         #google_translate_element {
             position: fixed;
-            top: 50px;
+            top: 100px;
             left: 20px;
             z-index: 101;
         }
         @media (max-width: 768px) {
             header nav ul {
-                display: none;
-            }
-            header .menu-toggle {
                 display: block;
-                position: absolute;
-                right: 20px;
-                cursor: pointer;
-                color: #ffffff;
-            }
-            header nav.active ul {
-                display: flex;
-                flex-direction: column;
-                background: #000;
-                position: fixed;
-                top: 50px;
-                right: 20px;
-                width: 200px;
-                padding: 20px;
-                border-radius: 8px;
-                z-index: 102;
+                text-align: center;
             }
             .main-visual h1 {
                 font-size: 4em;
@@ -159,7 +138,6 @@
 <body>
     <header>
         <div class="logo">多士亮磨のAIアニメラボ</div>
-        <div class="menu-toggle">☰</div>
         <nav>
             <ul>
                 <li><a href="#">ホーム</a></li>
@@ -181,14 +159,5 @@
     </div>
     
     <div id="google_translate_element"></div>
-    
-    <script>
-        const menuToggle = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('nav');
-        
-        menuToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
-        });
-    </script>
 </body>
 </html>
