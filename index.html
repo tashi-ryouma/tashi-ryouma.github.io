@@ -130,10 +130,19 @@
             }
         }
     </style>
+    <script>
+        function addDeepLTranslateWidget() {
+            var deepLWidget = document.createElement('script');
+            deepLWidget.src = 'https://www.deepl.com/widget/DeepL.js';
+            deepLWidget.async = true;
+            document.head.appendChild(deepLWidget);
+        }
+        window.onload = addDeepLTranslateWidget;
+    </script>
 </head>
 <body>
     <header>
-        <div class="logo">　多士亮磨のAIアニメラボ</div>
+        <div class="logo" style="font-size: 1em;">　多士亮磨のAIアニメラボ</div>
         <nav>
             <ul>
                 <li><a href="#">ホーム</a></li>
