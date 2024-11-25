@@ -129,15 +129,23 @@
                 padding: 10px 20px;
             }
         }
+        #translate-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #555;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 50px;
+            cursor: pointer;
+            z-index: 999;
+            font-size: 0.8em;
+        }
     </style>
     <script>
-        function addDeepLTranslateWidget() {
-            var deepLWidget = document.createElement('script');
-            deepLWidget.src = 'https://www.deepl.com/widget/DeepL.js';
-            deepLWidget.async = true;
-            document.head.appendChild(deepLWidget);
+        function handleTranslateButtonClick() {
+            window.open('https://www.deepl.com/translator', '_blank');
         }
-        window.onload = addDeepLTranslateWidget;
     </script>
 </head>
 <body>
@@ -161,5 +169,6 @@
             <button class="cta-button">今すぐツールを試してみる</button>
         </div>
     </div>
+    <div id="translate-button" onclick="handleTranslateButtonClick()">翻訳</div>
 </body>
 </html>
