@@ -17,17 +17,18 @@
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 0 10px; /* 左右の余白を10pxに縮小 */
+          padding: 5px 10px; /* 上下の余白を5pxに縮小 */
         }
         .logo {
            flex: 1;
            text-align: left;
-           max-height: 180px; /* ロゴのコンテナの最大高さを180pxに設定 */
+           max-height: 150px; /* ロゴの最大高さを設定 */
         }
         .logo img {
-           width: 150px; /* ロゴ画像の幅を230pxに固定 */
+           width: 230px; /* ロゴ画像の幅を230pxに固定 */
            height: auto; /* 縦横比を維持 */
-           margin: 5px 0; /* 余白を追加 */
+           max-height: 100px; /* ロゴ画像の高さを制限 */
+           margin: 10px 0; /* 上下に余白を追加してナビゲーションとのバランスを取る */
         }
         header nav {
             flex: 2;
@@ -52,10 +53,11 @@
         header nav ul li a {
             color: #ffffff;
             text-decoration: none;
-            font-weight: 600; /* 太字にして見やすく */
+            font-weight: 600;
             font-size: 1.2em;
-            transition: color 0.3s ease; /* ホバー時の色変更のためのアニメーション */
-           font-family: 'Futura', sans-serif; /* おしゃれなフォントに変更 */
+            line-height: 1.2; /* 行間を1.2に設定 */
+            transition: color 0.3s ease;
+            font-family: 'Futura', sans-serif;
         }
         header nav ul li a:hover {
             color: #ff6347; /* ホバー時の色変更 */
