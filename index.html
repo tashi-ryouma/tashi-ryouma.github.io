@@ -41,14 +41,24 @@
             margin: 0; /* 余分なマージンを削除 */
         }
         header nav ul li {
-            display: block;
-            margin-right: 10px;
+            display: inline-block;
+            margin-right: 20px;
+        }
+        header nav ul li:not(:last-child)::after {
+            content: '|';
+            margin-left: 20px;
+            color: #777; /* 仕切り線の色を設定 */
         }
         header nav ul li a {
             color: #ffffff;
             text-decoration: none;
             font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            font-size: 1.2em;
+            transition: color 0.3s ease; /* ホバー時の色変更のためのアニメーション */
+            font-family: 'Courier New', Courier, monospace; /* お洒落なフォントに変更 */
+        }
+        header nav ul li a:hover {
+            color: #ff6347; /* ホバー時の色変更 */
         }
         .main-visual {
             height: 100vh;
