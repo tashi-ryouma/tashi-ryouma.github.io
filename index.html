@@ -35,11 +35,12 @@
     }
     header nav ul {
         display: inline-flex;
-        justify-content: space-between; /* それぞれのメニューアイテム間の距離を均等にする */
-        align-items: center;
-        width: 100%;
-        padding: 0; /* パディングを完全に削除 */
-        margin: 0; /* マージンを完全に削除 */
+    justify-content: flex-start; /* 左寄せにし、余白を詰める */
+    align-items: center;
+    width: auto; /* 幅を自動に設定して余分なスペースを減らす */
+    padding: 0; /* パディングを完全に削除 */
+    margin: 0; /* マージンを完全に削除 */
+    gap: 10px; /* 各項目の間のスペースを設定 */
     }
     header nav ul li {
         display: inline-block;
