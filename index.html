@@ -17,17 +17,17 @@
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 0 10px;
+          padding: 0 20px;
         }
         .logo {
            flex: 1;
            text-align: left;
-           max-height: 180px; /* ロゴのコンテナの最大高さを180pxに設定 */
+           max-height: 230px; /* ロゴのコンテナの最大高さを230pxに設定 */
         }
         .logo img {
-           width: 150px; /* ロゴ画像の幅を180pxに固定 */
+           width: 230px; /* ロゴ画像の幅を230pxに固定 */
            height: auto; /* 縦横比を維持 */
-           margin: 5px 0; /* 余白を削除 */
+           margin: 5px 0; /* 余白を追加 */
         }
         header nav {
             flex: 2;
@@ -42,18 +42,18 @@
         }
         header nav ul li {
             display: inline-block;
-            margin-right: 20px;
+            margin-right: 30px;
         }
         header nav ul li:not(:last-child)::after {
             content: '|';
-            margin-left: 20px;
+            margin-left: 30px;
             color: #777; /* 仕切り線の色を設定 */
         }
         header nav ul li a {
             color: #ffffff;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1em;
+            font-size: 1.2em;
             transition: color 0.3s ease; /* ホバー時の色変更のためのアニメーション */
             font-family: 'Courier New', Courier, monospace; /* お洒落なフォントに変更 */
         }
