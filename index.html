@@ -22,12 +22,15 @@
         }
         .logo {
             flex: 1;
-            text-align: left;
+    text-align: left;
+    max-height: 80px; /* ロゴのコンテナの最大高さを指定してナビゲーションバーに干渉しないように制約 */
+    overflow: hidden; /* コンテナ内に収まらない部分は非表示にする */
         }
         .logo img {
-    width: 230px; /* 画像のサイズを調整 */
+    width: 230px; /* 画像の幅を固定 */
     height: auto; /* 縦横比を保ちながらサイズ調整 */
-    margin: 5px; /* 余白を少し残す */
+    margin: 10px; /* 周囲に余白を追加 */
+    max-height: 100%; /* コンテナの高さに合わせて縮小 */
     position: relative;
         }
         header nav {
