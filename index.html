@@ -134,9 +134,15 @@
             background-color: #ff6347;
         }
         @media (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-    }
+   .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+    z-index: 10; /* メニューが他の要素の後ろに隠れないように */
+    padding: 10px; /* タップしやすくするための余白 */
+}
+
     header nav {
         display: none;
         position: absolute;
@@ -191,7 +197,11 @@
     
     if (menuToggle && nav) {
         menuToggle.addEventListener('click', function () {
-            nav.classList.toggle('active');
+            if (nav.classList.contains('active')) {
+                nav.classList.remove('active');
+            } else {
+                nav.classList.add('active');
+            }
         });
     }
 });
