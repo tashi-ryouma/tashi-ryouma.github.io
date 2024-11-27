@@ -17,8 +17,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 120px; /* ヘッダーの高さを固定 */
-            padding: 0 20px; /* 水平方向の余白を調整 */
+            height: 120px;
+            padding: 0 20px;
             position: relative;
         }
         .logo {
@@ -26,9 +26,9 @@
             text-align: left;
         }
         .logo img {
-            width: 110px; /* ロゴ画像の幅を230pxに固定 */
-            height: auto; /* 縦横比を維持 */
-            margin: 5px; /* 余白を削除 */
+            width: 110px;
+            height: auto;
+            margin: 5px;
         }
         .menu-toggle {
             display: none;
@@ -42,38 +42,38 @@
             margin: 4px;
         }
         header nav {
-            flex: 3; /* ナビゲーション部分の幅を確保 */
-            text-align: right; /* ナビゲーションを右寄せ */
-            padding-right: 20px; /* 右に余白を追加 */
+            flex: 3;
+            text-align: right;
+            padding-right: 20px;
         }
         header nav ul {
             display: inline-flex;
-            justify-content: flex-end; /* 右寄せに変更 */
+            justify-content: flex-end;
             align-items: center;
             width: auto;
             padding: 0;
             margin: 0;
-            gap: 15px; /* 各項目の間のスペースを調整 */
+            gap: 15px;
         }
         header nav ul li {
             display: inline-block;
         }
         header nav ul li:not(:last-child)::after {
             content: '|';
-            margin-left: 10px; /* 少し余白を調整 */
-            color: #777; /* 仕切り線の色を設定 */
+            margin-left: 10px;
+            color: #777;
         }
         header nav ul li a {
             color: #ffffff;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9em; /* フォントサイズを少し小さく */
+            font-size: 0.9em;
             line-height: 1.2;
             transition: color 0.3s ease;
             font-family: 'Futura', sans-serif;
         }
         header nav ul li a:hover {
-            color: #ff6347; /* ホバー時の色変更 */
+            color: #ff6347;
         }
         .main-visual {
             height: 100vh;
@@ -145,14 +145,14 @@
                 background-color: #121212;
                 width: 100%;
             }
+            header nav.active {
+                display: block;
+            }
             header nav ul {
                 flex-direction: column;
                 align-items: center;
                 gap: 10px;
                 padding: 10px 0;
-            }
-            .menu-toggle.active + nav {
-                display: block;
             }
             .main-visual h1 {
                 font-size: 4em;
