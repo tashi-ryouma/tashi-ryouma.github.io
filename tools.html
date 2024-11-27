@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIツール紹介</title> <!-- 各ページごとにタイトルを変更してください -->
+    <title>AIアニメツール紹介</title> <!-- 各ページごとにタイトルを変更してください -->
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -125,6 +125,18 @@
                 padding: 10px 0;
             }
         }
+        #translate-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #555;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 50px;
+            cursor: pointer;
+            z-index: 999;
+            font-size: 0.8em;
+        }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -138,6 +150,10 @@
                 });
             }
         });
+
+        function handleTranslateButtonClick() {
+            window.open('https://www.deepl.com/translator', '_blank');
+        }
     </script>
 </head>
 <body>
@@ -163,5 +179,6 @@
         <h1>AIツール紹介</h1>
         <p>このページでは、私たちのAIツールについて紹介します。最新の技術を使った革新的なアニメ制作ツールで、クリエイターの創造性をさらに広げることを目指しています。</p>
     </div>
+    <div id="translate-button" onclick="handleTranslateButtonClick()">翻訳</div>
 </body>
 </html>
