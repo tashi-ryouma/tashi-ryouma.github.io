@@ -19,7 +19,12 @@
             align-items: center;
             height: 120px; /* ヘッダーの高さを固定 */
             padding: 0 20px; /* 水平方向の余白を調整 */
-            position: relative;
+            position: fixed; /* スクロール時にヘッダーを固定 */
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #121212;
+            z-index: 100;
         }
         .logo {
             flex: 1;
@@ -83,6 +88,7 @@
             align-items: center;
             text-align: center;
             position: relative;
+            margin-top: 120px; /* ヘッダーの高さ分を空ける */
         }
         .main-visual::after {
             content: '';
