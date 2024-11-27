@@ -136,16 +136,18 @@
         @media (max-width: 768px) {
     .menu-toggle {
         display: flex;
+        z-index: 10; /* ハンバーガーメニューが他の要素の下に隠れないように */
     }
     header nav {
         display: none;
-        position: absolute;
+        position: fixed;
         top: 100%;
         right: 0;
         background-color: #121212;
         width: 100%;
         flex-direction: column;
         align-items: center;
+        z-index: 9; /* メニューが他の要素より前面に表示されるように */
     }
     header nav.active {
         display: flex;
@@ -155,7 +157,9 @@
         align-items: center;
         gap: 10px;
         padding: 10px 0;
+        margin: 0; /* スマホ表示で余白を取り除く */
     }
+}
             .main-visual h1 {
                 font-size: 4em;
                 margin-top: 100px;
@@ -186,12 +190,15 @@
             window.open('https://www.deepl.com/translator', '_blank');
         }
         document.addEventListener('DOMContentLoaded', function () {
-        const menuToggle = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('header nav');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('header nav');
+    
+    if (menuToggle && nav) {
         menuToggle.addEventListener('click', function () {
             nav.classList.toggle('active');
         });
-        });
+    }
+});
     </script>
 </head>
 <body>
