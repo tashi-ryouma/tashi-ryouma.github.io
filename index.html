@@ -14,54 +14,66 @@
             padding: 0;
         }
         header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 120px; /* ヘッダーの高さを固定 */
-        padding: 0 20px; /* 水平方向の余白を調整 */
-    }
-    .logo {
-        flex: 1;
-        text-align: left;
-    }
-    .logo img {
-        width: 110px; /* ロゴ画像の幅を230pxに固定 */
-        height: auto; /* 縦横比を維持 */
-        margin: 5px; /* 余白を削除 */
-    }
-    header nav {
-        flex: 3; /* ナビゲーション部分の幅を確保 */
-    text-align: right; /* ナビゲーションを右寄せ */
-    padding-right: 20px; /* 右に余白を追加 */
-    }
-    header nav ul {
-        display: inline-flex;
-    justify-content: flex-end; /* 右寄せに変更 */
-    align-items: center;
-    width: auto;
-    padding: 0;
-    margin: 0;
-    gap: 5px; /* 各項目の間のスペースを少なくする */
-    }
-    header nav ul li {
-        display: inline-block;
-    }
-    header nav ul li:not(:last-child)::after {
-        content: '|';
-        margin-left: 15px; /* 少し余白を追加 */
-        color: #777; /* 仕切り線の色を設定 */
-    }
-    header nav ul li a {
-        color: #ffffff;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1em; /* フォントサイズを少し大きく */
-        line-height: 1.2;
-        transition: color 0.3s ease;
-        font-family: 'Futura', sans-serif;
-    }
-    header nav ul li a:hover {
-        color: #ff6347; /* ホバー時の色変更 */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 120px; /* ヘッダーの高さを固定 */
+            padding: 0 20px; /* 水平方向の余白を調整 */
+            position: relative;
+        }
+        .logo {
+            flex: 1;
+            text-align: left;
+        }
+        .logo img {
+            width: 110px; /* ロゴ画像の幅を230pxに固定 */
+            height: auto; /* 縦横比を維持 */
+            margin: 5px; /* 余白を削除 */
+        }
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .menu-toggle div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 4px;
+        }
+        header nav {
+            flex: 3; /* ナビゲーション部分の幅を確保 */
+            text-align: right; /* ナビゲーションを右寄せ */
+            padding-right: 20px; /* 右に余白を追加 */
+        }
+        header nav ul {
+            display: inline-flex;
+            justify-content: flex-end; /* 右寄せに変更 */
+            align-items: center;
+            width: auto;
+            padding: 0;
+            margin: 0;
+            gap: 5px; /* 各項目の間のスペースを少なくする */
+        }
+        header nav ul li {
+            display: inline-block;
+        }
+        header nav ul li:not(:last-child)::after {
+            content: '|';
+            margin-left: 15px; /* 少し余白を追加 */
+            color: #777; /* 仕切り線の色を設定 */
+        }
+        header nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em; /* フォントサイズを少し大きく */
+            line-height: 1.2;
+            transition: color 0.3s ease;
+            font-family: 'Futura', sans-serif;
+        }
+        header nav ul li a:hover {
+            color: #ff6347; /* ホバー時の色変更 */
         }
         .main-visual {
             height: 100vh;
@@ -122,17 +134,25 @@
             background-color: #ff6347;
         }
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                padding: 10px;
+            .menu-toggle {
+                display: flex;
+            }
+            header nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background-color: #121212;
+                width: 100%;
             }
             header nav ul {
                 flex-direction: column;
                 align-items: center;
                 gap: 10px;
+                padding: 10px 0;
             }
-            header nav ul li {
-                margin-right: 0;
+            .menu-toggle.active + nav {
+                display: block;
             }
             .main-visual h1 {
                 font-size: 4em;
@@ -163,11 +183,24 @@
         function handleTranslateButtonClick() {
             window.open('https://www.deepl.com/translator', '_blank');
         }
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('header nav');
+            menuToggle.addEventListener('click', function () {
+                menuToggle.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
+        });
     </script>
 </head>
 <body>
     <header>
         <div class="logo"><img src="AnimeLab.png" alt="Anime Lab Logo"></div>
+        <div class="menu-toggle">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <nav>
             <ul>
                 <li><a href="#">ホーム</a></li>
