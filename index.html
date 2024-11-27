@@ -134,36 +134,34 @@
             background-color: #ff6347;
         }
         @media (max-width: 768px) {
-   .menu-toggle {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    position: relative;
-    z-index: 10; /* メニューが他の要素の後ろに隠れないように */
-    padding: 10px; /* タップしやすくするための余白 */
-}
-.menu-toggle.active + nav {
-    display: flex;
-}
-    header nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background-color: #121212;
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-    }
-    header nav.active {
-        display: flex;
-    }
-    header nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        padding: 10px 0;
-    }
+            .menu-toggle {
+                display: flex;
+                flex-direction: column;
+                cursor: pointer;
+                position: relative;
+                z-index: 10; /* メニューが他の要素の後ろに隠れないように */
+                padding: 10px; /* タップしやすくするための余白 */
+            }
+            header nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background-color: #121212;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                z-index: 9; /* メニューが隠れないように調整 */
+            }
+            header nav.active {
+                display: flex;
+            }
+            header nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                padding: 10px 0;
+            }
             .main-visual h1 {
                 font-size: 4em;
                 margin-top: 100px;
@@ -194,15 +192,16 @@
             window.open('https://www.deepl.com/translator', '_blank');
         }
         document.addEventListener('DOMContentLoaded', function () {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('header nav');
-    
-    if (menuToggle && nav) {
-        menuToggle.addEventListener('click', function () {
-            nav.classList.toggle('active');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('header nav');
+            
+            if (menuToggle && nav) {
+                menuToggle.addEventListener('click', function () {
+                    menuToggle.classList.toggle('active');
+                    nav.classList.toggle('active');
+                });
+            }
         });
-    }
-});
     </script>
 </head>
 <body>
