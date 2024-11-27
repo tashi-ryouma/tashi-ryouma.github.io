@@ -3,12 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIツール紹介</title>
+    <title>アニメコミュニティ</title> <!-- 各ページごとにタイトルを変更してください -->
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 120px;
+            padding: 0 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #121212;
+            z-index: 100;
+        }
+        .logo {
+            flex: 1;
+            text-align: left;
+        }
+        .logo img {
+            width: 110px;
+            height: auto;
+            margin: 5px;
+        }
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .menu-toggle div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 4px;
+        }
+        header nav {
+            flex: 3;
+            text-align: right;
+            padding-right: 20px;
+        }
+        header nav ul {
+            display: inline-flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: auto;
+            padding: 0;
+            margin: 0;
+            gap: 15px;
+        }
+        header nav ul li {
+            display: inline-block;
+        }
+        header nav ul li:not(:last-child)::after {
+            content: '|';
+            margin-left: 10px;
+            color: #777;
+        }
+        header nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            line-height: 1.2;
+            transition: color 0.3s ease;
+            font-family: 'Futura', sans-serif;
+        }
+        header nav ul li a:hover {
+            color: #ff6347;
+        }
+        .page-content {
+            padding: 140px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .page-content h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .page-content p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+                flex-direction: column;
+                cursor: pointer;
+                position: relative;
+                z-index: 10;
+                padding: 10px;
+            }
+            header nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background-color: #121212;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                z-index: 9;
+            }
+            header nav.active {
+                display: flex;
+            }
+            header nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                padding: 10px 0;
+            }
+        }
+        #translate-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #555;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 50px;
+            cursor: pointer;
+            z-index: 999;
+            font-size: 0.8em;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('header nav');
+            
+            if (menuToggle && nav) {
+                menuToggle.addEventListener('click', function () {
+                    menuToggle.classList.toggle('active');
+                    nav.classList.toggle('active');
+                });
+            }
+        });
+
+        function handleTranslateButtonClick() {
+            window.open('https://www.deepl.com/translator', '_blank');
+        }
+    </script>
 </head>
 <body>
     <header>
         <div class="logo"><img src="AnimeLab.png" alt="Anime Lab Logo"></div>
+        <div class="menu-toggle">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <nav>
             <ul>
                 <li><a href="index.html">ホーム</a></li>
@@ -19,10 +174,11 @@
                 <li><a href="contact.html">お問い合わせ</a></li>
             </ul>
         </nav>
-    </header>
-    <main>
+    </header> 
+    <div class="page-content">
         <h1>AIツール紹介</h1>
-        <p>このページではAIツールについて紹介します。</p>
-    </main>
+        <p>このページでは、私たちのAIツールについて紹介します。最新の技術を使った革新的なアニメ制作ツールで、クリエイターの創造性をさらに広げることを目指しています。</p>
+    </div>
+    <div id="translate-button" onclick="handleTranslateButtonClick()">翻訳</div>
 </body>
 </html>
