@@ -95,6 +95,74 @@
             line-height: 1.6;
             margin-bottom: 20px;
         }
+        .tools-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .tool-card {
+            background-color: #1f1f1f;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        .tool-card .badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #ff6347;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        .tool-card:hover {
+            transform: scale(1.05);
+        }
+        .tool-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .tool-card h3 {
+            font-size: 1.5em;
+            margin: 15px 0;
+        }
+        .tool-card p {
+            font-size: 1em;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+        .tool-card .button-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        .tool-card button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .tool-card .try-button {
+            background-color: #ff6347;
+            color: #fff;
+        }
+        .tool-card .try-button:hover {
+            background-color: #ff4500;
+        }
+        .tool-card .details-button {
+            background-color: #555;
+            color: #fff;
+        }
+        .tool-card .details-button:hover {
+            background-color: #777;
+        }
         @media (max-width: 768px) {
             .menu-toggle {
                 display: flex;
@@ -176,8 +244,66 @@
         </nav>
     </header> 
     <div class="page-content">
-        <h1>AIアニメツール紹介</h1>
+        <h1>AIツール紹介</h1>
         <p>このページでは、私たちのAIツールについて紹介します。最新の技術を使った革新的なアニメ制作ツールで、クリエイターの創造性をさらに広げることを目指しています。</p>
+        <div class="tools-container">
+            <!-- AIツールのカード形式 -->
+            <div class="tool-card">
+                <div class="badge">人気No.1</div>
+                <img src="GPT1.png" alt="AI Anime Character Creator & Story Generator">
+                <h3>AI Anime Character Creator & Story Generator</h3>
+                <p>AIでアニメキャラ＆ストーリー作成をもっと簡単に、もっと自由に！<br>キャラクターのデザインから深みのあるバックストーリー、伏線たっぷりのストーリー展開まで、このツールなら全てが手のひらで完結！クリエイター初心者でも安心。無限のアイデアを形にする第一歩を踏み出そう！<br><strong>GPTストア「アニメ」検索ランキング1位！</strong></p>
+                <div class="button-group">
+                    <button class="try-button">無料で使ってみる</button>
+                    <button class="details-button">詳細を見る</button>
+                </div>
+            </div>
+            <div class="tool-card">
+                <img src="GPT2.png" alt="Anime Expert">
+                <h3>Anime Expert</h3>
+                <p>アニメ＆マンガを徹底解析！キャラクターの魅力やストーリーの深掘り解説で、あなたの好きがもっと広がる。最新情報とファンダムの視点を交えて、より深い楽しみをお届けします！</p>
+                <div class="button-group">
+                    <button class="try-button">無料で使ってみる</button>
+                    <button class="details-button">詳細を見る</button>
+                </div>
+            </div>
+            <div class="tool-card">
+                <img src="GPT3.png" alt="Animeify">
+                <h3>Animeify</h3>
+                <p>AIでアニメの世界を創造しよう！キャラクターデザインから背景生成、動きや表情のカスタマイズまで、誰でも簡単にプロ級のアニメ作品を制作できるオールインワンツールです。</p>
+                <div class="button-group">
+                    <button class="try-button">無料で使ってみる</button>
+                    <button class="details-button">詳細を見る</button>
+                </div>
+            </div>
+            <div class="tool-card">
+                <img src="GPT4.png" alt="AI Anime Scene Composer & Animator">
+                <h3>AI Anime Scene Composer & Animator</h3>
+                <p>アニメ制作を、もっと簡単に、もっと自由に。<br>キャラクター作成からシーン構成、アニメーションまで、誰でもプロのようなアニメを作れるAIツール。アイデアを形にし、想像を超えた作品を作りましょう！</p>
+                <div class="button-group">
+                    <button class="try-button">無料で使ってみる</button>
+                    <button class="details-button">詳細を見る</button>
+                </div>
+            </div>
+            <div class="tool-card">
+                <img src="AIanime1.png" alt="AI Anime World Builder & Interactive Explorer">
+                <h3>AI Anime World Builder & Interactive Explorer</h3>
+                <p>AIアニメワールドビルダーで、想像力をカタチに！<br>キャラクター、地形、建物を自由にデザインし、あなただけのアニメの世界を簡単に作成。初心者でもプロ並みの作品を実現できます！</p>
+                <div class="button-group">
+                    <button class="try-button">無料で使ってみる</button>
+                    <button class="details-button">詳細を見る</button>
+                </div>
+            </div>
+            <div class="tool-card">
+                <img src="AIanime2.png" alt="Anime Story Planner">
+                <h3>Anime Story Planner</h3>
+                <p>「Anime Story Planner」- あなたのアイデアをアニメの世界へ！<br>簡単な操作で、スクリプトから直感的なストーリーボードを作成可能。キャラクターやシーンを自由にカスタマイズし、プロジェクトをクラウドで保存してどこでも続きができます。プロのようなビジュアル化で、創作をもっと楽しく、効率的に！</p>
+                <div class="button-group">
+                    <button class="try-button">無料で使ってみる</button>
+                    <button class="details-button">詳細を見る</button>
+                </div>
+            </div>
+        </div>
     </div>
     <div id="translate-button" onclick="handleTranslateButtonClick()">翻訳</div>
 </body>
