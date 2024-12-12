@@ -46,39 +46,13 @@
             background-color: #fff;
             margin: 4px;
         }
-        header nav {
-            flex: 3;
-            text-align: right;
-            padding-right: 20px;
-        }
         header nav ul {
             display: inline-flex;
             justify-content: flex-end;
             align-items: center;
-            width: auto;
             padding: 0;
             margin: 0;
             gap: 15px;
-        }
-        header nav ul li {
-            display: inline-block;
-        }
-        header nav ul li:not(:last-child)::after {
-            content: '|';
-            margin-left: 10px;
-            color: #777;
-        }
-        header nav ul li a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9em;
-            line-height: 1.2;
-            transition: color 0.3s ease;
-            font-family: 'Futura', sans-serif;
-        }
-        header nav ul li a:hover {
-            color: #ff6347;
         }
         .page-content {
             padding: 140px 20px;
@@ -95,83 +69,27 @@
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            border: 2px solid #ffffff;
         }
-        .profile-details {
-            flex: 1;
+        .donation-section {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            border-top: 1px solid #444;
         }
-        .profile-details h2 {
-        font-size: 2em;
-        margin: 0;
-        color: #ffa07a; /* 明るめのオレンジ */
-    }
-    .profile-details p strong {
-        color: #ffa07a; /* 明るめのオレンジ */
-    }
-    .profile-details p {
-        font-size: 0.95em; /* 少し小さく */
-        line-height: 1.6;
-        margin: 10px 0;
+        .donation-section h2 {
+            color: #ffa07a;
+            margin-bottom: 15px;
         }
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: flex;
-                flex-direction: column;
-                cursor: pointer;
-                position: relative;
-                z-index: 10;
-                padding: 10px;
-            }
-            header nav {
-                display: none;
-                position: absolute;
-                top: 100%;
-                right: 0;
-                background-color: #121212;
-                width: 100%;
-                flex-direction: column;
-                align-items: center;
-                z-index: 9;
-            }
-            header nav.active {
-                display: flex;
-            }
-            header nav ul {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-                padding: 10px 0;
-            }
-        }
-        #translate-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #555;
-            color: #fff;
-            padding: 10px 15px;
-            border-radius: 50px;
-            cursor: pointer;
-            z-index: 999;
-            font-size: 0.8em;
+        .donation-section p {
+            font-size: 1em;
+            margin-bottom: 20px;
         }
     </style>
+    <script src="https://www.paypal.com/sdk/js?client-id=BAAIFhq8HmJBr6-D8iTgNSTSyL6EZeMikhlacrJ8X54LvzO7-XbMU3G2dWtl6CnVsfyHfbFFjWel-V8-bQ&components=hosted-buttons&disable-funding=venmo&currency=JPY"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const nav = document.querySelector('header nav');
-
-            if (menuToggle && nav) {
-                menuToggle.addEventListener('click', function () {
-                    menuToggle.classList.toggle('active');
-                    nav.classList.toggle('active');
-                });
-            }
-        });
-
-        function handleTranslateButtonClick() {
-            window.open('https://www.deepl.com/translator', '_blank');
-        }
+      paypal.HostedButtons({
+        hostedButtonId: "534A3EWJLUPBC",
+      }).render("#paypal-container-534A3EWJLUPBC")
     </script>
 </head>
 <body>
@@ -200,12 +118,15 @@
             <div class="profile-details">
                 <h2>多士亮磨</h2>
                 <p><strong>タイトル:</strong> AIとクリエイターの共同作業を通じて、新たなアニメ制作の地平を開拓する</p>
-                <p><strong>趣味:</strong> アニメ鑑賞（特にストーリーや演出の考察）、AIを活用した小説制作、次世代のクリエイティブ技術の研究</p>
-                <p><strong>なぜAIアニメツールを作ったのか?</strong><br>東映アニメーションの技術やストーリーテリングに多大な影響を受け、自らもそのような感動を届けられる作品を生み出したいという情熱が出発点でした。また、AI技術が進化する中、従来の制作プロセスを効率化し、クリエイターが本当に集中したい部分に専念できるような環境を整える必要性を強く感じました。その結果、AIと人間の共同作業で実現する新しいツールを開発することを決意しました。</p>
-                <p><strong>ビジョン:</strong><br>私はアニメ制作が一部のプロだけのものではなく、より多くの人々が創造性を発揮できる分野になるべきだと考えています。私のAIアニメツールは、初心者からプロまで、誰でも簡単に高品質な作品を生み出せるよう設計されています。また、コミュニティを通じて、ユーザー同士が互いに刺激し合い、アニメ制作の新たな可能性を探求できる場を提供したいと願っています。最終的には、アニメ文化全体を一段と進化させることを目指しています。</p>
+                <p><strong>趣味:</strong> アニメ鑑賞（特にストーリーや演出の考察）、AIを活用した小説制作</p>
+                <p><strong>なぜAIアニメツールを作ったのか?</strong> 東映アニメーションの技術やストーリーテリングに影響を受け、自身の情熱を反映。</p>
             </div>
         </div>
     </div>
-    <div id="translate-button" onclick="handleTranslateButtonClick()">翻訳</div>
+    <div class="donation-section">
+        <h2>応援金のご協力をお願いします</h2>
+        <p>このプロジェクトを継続し、さらなる発展を目指すために、ご支援をお願い致します。</p>
+        <div id="paypal-container-534A3EWJLUPBC"></div>
+    </div>
 </body>
 </html>
