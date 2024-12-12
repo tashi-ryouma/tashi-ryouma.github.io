@@ -127,6 +127,9 @@
             font-size: 1em;
             margin-bottom: 20px;
         }
+        .paypal-button-container {
+            text-align: center;
+        }
         @media (max-width: 768px) {
             .menu-toggle {
                 display: flex;
@@ -224,14 +227,16 @@
     </div>
     <div class="donation-section">
         <h2>応援金のご協力をお願いします</h2>
-        <p>このプロジェクトを継続し、さらなる発展を目指すため、ぜひご支援をお願いいたします。</p>
-        <script src="https://www.paypal.com/sdk/js?client-id=BAAIFhq8HmJBr6-D8iTgNSTSyL6EZeMikhlacrJ8X54LvzO7-XbMU3G2dWtl6CnVsfyHfbFFjWel-V8-bQ&components=hosted-buttons&disable-funding=venmo&currency=JPY"></script>
-        <div id="paypal-container-534A3EWJLUPBC"></div>
-        <script>
-          paypal.HostedButtons({
-            hostedButtonId: "534A3EWJLUPBC",
-          }).render("#paypal-container-534A3EWJLUPBC")
-        </script>
+        <p>AIアニメツールのさらなる発展とクリエイター支援のため、あなたのご協力をお願いします。<br>共にアニメ文化を新たな次元へと進めていきましょう。</p>
+        <div class="paypal-button-container">
+            <script src="https://www.paypal.com/sdk/js?client-id=BAAIFhq8HmJBr6-D8iTgNSTSyL6EZeMikhlacrJ8X54LvzO7-XbMU3G2dWtl6CnVsfyHfbFFjWel-V8-bQ&components=hosted-buttons&disable-funding=venmo&currency=JPY"></script>
+            <div id="paypal-container-534A3EWJLUPBC"></div>
+            <script>
+              paypal.HostedButtons({
+                hostedButtonId: "534A3EWJLUPBC",
+              }).render("#paypal-container-534A3EWJLUPBC")
+            </script>
+        </div>
     </div>
     <div id="translate-button" onclick="handleTranslateButtonClick()">翻訳</div>
 </body>
