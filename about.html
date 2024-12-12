@@ -210,7 +210,9 @@
     <div class="page-content">
         <h1>自己紹介</h1>
         <div class="profile-container">
-            <img src="tashiryouma.png" alt="【多士　亮磨】">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <img src="tashiryouma.png" alt="【多士　亮磨】">
+            </div>
             <div class="profile-details">
                 <h2>多士亮磨</h2>
                 <p><strong>タイトル:</strong> AIとクリエイターの共同作業を通じて、新たなアニメ制作の地平を開拓する</p>
@@ -223,10 +225,13 @@
     <div class="donation-section">
         <h2>応援金のご協力をお願いします</h2>
         <p>このプロジェクトを継続し、さらなる発展を目指すため、ぜひご支援をお願いいたします。</p>
-        <form action="https://www.paypal.com/donate" method="post" target="_blank">
-            <input type="hidden" name="hosted_button_id" value="YOUR_PAYPAL_BUTTON_ID">
-            <button type="submit" style="background-color: #ffa07a; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">寄付する</button>
-        </form>
+        <script src="https://www.paypal.com/sdk/js?client-id=BAAIFhq8HmJBr6-D8iTgNSTSyL6EZeMikhlacrJ8X54LvzO7-XbMU3G2dWtl6CnVsfyHfbFFjWel-V8-bQ&components=hosted-buttons&disable-funding=venmo&currency=JPY"></script>
+        <div id="paypal-container-534A3EWJLUPBC"></div>
+        <script>
+          paypal.HostedButtons({
+            hostedButtonId: "534A3EWJLUPBC",
+          }).render("#paypal-container-534A3EWJLUPBC")
+        </script>
     </div>
     <div id="translate-button" onclick="handleTranslateButtonClick()">翻訳</div>
 </body>
