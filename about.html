@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>自己紹介</title> <!-- 各ページごとにタイトルを変更してください -->
+    <title>自己紹介</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -86,14 +86,29 @@
             margin: 0 auto;
             text-align: left;
         }
-        .page-content h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
+        .profile-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
-        .page-content p {
+        .profile-container img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 2px solid #ffffff;
+        }
+        .profile-details {
+            flex: 1;
+        }
+        .profile-details h2 {
+            font-size: 2em;
+            margin: 0;
+            color: #ff6347;
+        }
+        .profile-details p {
             font-size: 1.2em;
             line-height: 1.6;
-            margin-bottom: 20px;
+            margin: 10px 0;
         }
         @media (max-width: 768px) {
             .menu-toggle {
@@ -142,7 +157,7 @@
         document.addEventListener('DOMContentLoaded', function () {
             const menuToggle = document.querySelector('.menu-toggle');
             const nav = document.querySelector('header nav');
-            
+
             if (menuToggle && nav) {
                 menuToggle.addEventListener('click', function () {
                     menuToggle.classList.toggle('active');
@@ -174,10 +189,19 @@
                 <li><a href="contact.html">お問い合わせ</a></li>
             </ul>
         </nav>
-    </header> 
+    </header>
     <div class="page-content">
         <h1>自己紹介</h1>
-        <p>このページでは、私たちのAIツールについて紹介します。最新の技術を使った革新的なアニメ制作ツールで、クリエイターの創造性をさらに広げることを目指しています。</p>
+        <div class="profile-container">
+            <img src="tashiryouma.png" alt="多士亮磨">
+            <div class="profile-details">
+                <h2>多士亮磨</h2>
+                <p><strong>タイトル:</strong> AIとの共同作業で更なる上のアニメ制作を目指す</p>
+                <p><strong>趣味:</strong> アニメ鑑賞、考察、AIとの共同作業で小説</p>
+                <p><strong>なぜAIアニメツールを作ったのか?</strong><br>数多くのアニメを見て東映アニメーションさんの技術、ストーリーに影響を受け、自分でもそのような皆に感動を与えられる作品を作りたいと思いました。そしてちょうどAIが急ピッチで成長を遂げているので、AIと人間の共同作業で作れるAIツールが必要だと感じたのがきっかけです。</p>
+                <p><strong>ビジョン:</strong><br>私のアニメコミュニティを通じて、私のAIアニメツールで作った作品を共有し、皆さんがアニメ制作を楽しみながら切磋琢磨し、アニメのレベルをさらに上に上げていきたいと考えています。</p>
+            </div>
+        </div>
     </div>
     <div id="translate-button" onclick="handleTranslateButtonClick()">翻訳</div>
 </body>
