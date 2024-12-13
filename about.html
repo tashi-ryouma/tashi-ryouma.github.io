@@ -130,75 +130,36 @@
         .paypal-button-container {
             text-align: center;
         }
-       @media (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        cursor: pointer;
-        position: relative;
-        z-index: 10;
-        padding: 10px;
-    }
-    header nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background-color: #121212;
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        z-index: 9;
-    }
-    header nav.active {
-        display: flex;
-    }
-    header nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        padding: 10px 0;
-    }
-
-    /* 自己紹介ページ専用の調整 */
-    .profile-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .profile-container img {
-        width: 120px;
-        height: auto;
-        margin-bottom: 20px;
-    }
-    .profile-details h2 {
-        font-size: 1.5em;
-        margin-bottom: 10px;
-    }
-    .profile-details p {
-        font-size: 0.9em;
-        line-height: 1.5;
-    }
-/* PayPalボタンの親要素を中央揃え */
-.paypal-button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%; /* 親要素の幅を100%にする */
-    max-width: 300px; /* 最大幅を300pxに制限 */
-    margin: 0 auto; /* 完全中央揃え */
-    text-align: center;
-}
-
-#paypal-container-534A3EWJLUPBC iframe {
-    display: block;
-    margin: 0 auto; /* 中央揃え */
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-}
-}
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+                flex-direction: column;
+                cursor: pointer;
+                position: relative;
+                z-index: 10;
+                padding: 10px;
+            }
+            header nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background-color: #121212;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                z-index: 9;
+            }
+            header nav.active {
+                display: flex;
+            }
+            header nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                padding: 10px 0;
+            }
+        }
         #translate-button {
             position: fixed;
             bottom: 20px;
@@ -212,43 +173,23 @@
             font-size: 0.8em;
         }
     </style>
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // メニューのトグル操作
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('header nav');
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('header nav');
 
-    if (menuToggle && nav) {
-        menuToggle.addEventListener('click', function () {
-            menuToggle.classList.toggle('active');
-            nav.classList.toggle('active');
+            if (menuToggle && nav) {
+                menuToggle.addEventListener('click', function () {
+                    menuToggle.classList.toggle('active');
+                    nav.classList.toggle('active');
+                });
+            }
         });
-    }
 
-   // PayPalボタンのスタイルを適用
-    const observer = new MutationObserver(() => {
-        const paypalIframe = document.querySelector('#paypal-container-534A3EWJLUPBC iframe');
-        if (paypalIframe) {
-            paypalIframe.style.width = '100%';       // 幅を親要素に合わせる
-            paypalIframe.style.maxWidth = '300px';  // 最大幅を300pxに制限
-            paypalIframe.style.height = 'auto';     // 高さを自動調整
-            paypalIframe.style.margin = '0 auto';   // 中央揃え
-            paypalIframe.style.display = 'block';   // ブロック要素として扱う
+        function handleTranslateButtonClick() {
+            window.open('https://www.deepl.com/translator', '_blank');
         }
-    });
-
-    // 監視対象のノード
-    const targetNode = document.querySelector('#paypal-container-534A3EWJLUPBC');
-    if (targetNode) {
-        observer.observe(targetNode, { childList: true, subtree: true });
-    }
-});
-
-// DeepL翻訳ボタンの操作
-function handleTranslateButtonClick() {
-    window.open('https://www.deepl.com/translator', '_blank');
-}
-</script>
+    </script>
 </head>
 <body>
     <header>
@@ -287,7 +228,7 @@ function handleTranslateButtonClick() {
     <div class="donation-section">
         <h2>応援金のご協力をお願いします</h2>
         <p>私たちのAIアニメツールのさらなる進化を支援し、一緒に新しいクリエイティブの未来を作り上げませんか？</p>
-        <div class="paypal-button-container" style="display: flex; justify-content: center; align-items: center; flex-direction: column; width: 100%; max-width: 300px; margin: 0 auto; box-sizing: border-box; text-align: center;">
+        <div class="paypal-button-container" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
     <script src="https://www.paypal.com/sdk/js?client-id=BAAIFhq8HmJBr6-D8iTgNSTSyL6EZeMikhlacrJ8X54LvzO7-XbMU3G2dWtl6CnVsfyHfbFFjWel-V8-bQ&components=hosted-buttons&disable-funding=venmo&currency=JPY"></script>
     <div id="paypal-container-534A3EWJLUPBC"></div>
     <script>
