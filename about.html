@@ -182,6 +182,19 @@
             font-size: 0.9em; /* フォントサイズ調整 */
             line-height: 1.5; /* 行間調整 */
         }
+             /* PayPal専用のスマホ調整 */
+    .paypal-button-container {
+        width: 100%; /* 横幅を親要素にフィット */
+        max-width: 300px; /* 最大幅を制限 */
+        margin: 0 auto; /* 中央揃え */
+        padding: 10px; /* 余白追加 */
+    }
+
+    #paypal-container-534A3EWJLUPBC iframe {
+        width: 100%; /* PayPalのiframeを親要素にフィット */
+        max-width: 300px; /* 最大幅を制限 */
+        height: auto; /* 高さを自動調整 */
+    }
     }
         #translate-button {
             position: fixed;
