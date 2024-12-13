@@ -101,17 +101,17 @@
             flex: 1;
         }
         .profile-details h2 {
-        font-size: 2em;
-        margin: 0;
-        color: #ffa07a; /* 明るめのオレンジ */
-    }
-    .profile-details p strong {
-        color: #ffa07a; /* 明るめのオレンジ */
-    }
-    .profile-details p {
-        font-size: 0.95em; /* 少し小さく */
-        line-height: 1.6;
-        margin: 10px 0;
+            font-size: 2em;
+            margin: 0;
+            color: #ffa07a; /* 明るめのオレンジ */
+        }
+        .profile-details p strong {
+            color: #ffa07a; /* 明るめのオレンジ */
+        }
+        .profile-details p {
+            font-size: 0.95em; /* 少し小さく */
+            line-height: 1.6;
+            margin: 10px 0;
         }
         .donation-section {
             text-align: center;
@@ -128,7 +128,16 @@
             margin-bottom: 20px;
         }
         .paypal-button-container {
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .paypal-button-container iframe {
+            max-width: 100%;
+            height: auto;
         }
         @media (max-width: 768px) {
             .menu-toggle {
@@ -159,29 +168,25 @@
                 gap: 10px;
                 padding: 10px 0;
             }
-             /* 自己紹介ページ専用の調整 */
-        .profile-container {
-            flex-direction: column; /* 縦並びに変更 */
-            align-items: center; /* 中央揃え */
-            text-align: center; /* テキストも中央揃え */
+            .profile-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .profile-container img {
+                width: 120px;
+                height: auto;
+                margin-bottom: 20px;
+            }
+            .profile-details h2 {
+                font-size: 1.5em;
+                margin-bottom: 10px;
+            }
+            .profile-details p {
+                font-size: 0.9em;
+                line-height: 1.5;
+            }
         }
-
-        .profile-container img {
-    width: 120px; /* 画像の幅を固定 */
-    height: auto; /* 自動で縦横比を保つ */
-    margin-bottom: 20px; /* 下に余白 */
-}
-
-        .profile-details h2 {
-            font-size: 1.5em; /* タイトルサイズ調整 */
-            margin-bottom: 10px; /* 余白を追加 */
-        }
-
-        .profile-details p {
-            font-size: 0.9em; /* フォントサイズ調整 */
-            line-height: 1.5; /* 行間調整 */
-        }
-    }
         #translate-button {
             position: fixed;
             bottom: 20px;
@@ -250,15 +255,15 @@
     <div class="donation-section">
         <h2>応援金のご協力をお願いします</h2>
         <p>私たちのAIアニメツールのさらなる進化を支援し、一緒に新しいクリエイティブの未来を作り上げませんか？</p>
-        <div class="paypal-button-container" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
-    <script src="https://www.paypal.com/sdk/js?client-id=BAAIFhq8HmJBr6-D8iTgNSTSyL6EZeMikhlacrJ8X54LvzO7-XbMU3G2dWtl6CnVsfyHfbFFjWel-V8-bQ&components=hosted-buttons&disable-funding=venmo&currency=JPY"></script>
-    <div id="paypal-container-534A3EWJLUPBC"></div>
-    <script>
-      paypal.HostedButtons({
-        hostedButtonId: "534A3EWJLUPBC",
-      }).render("#paypal-container-534A3EWJLUPBC")
-    </script>
-</div>
+        <div class="paypal-button-container">
+            <script src="https://www.paypal.com/sdk/js?client-id=BAAIFhq8HmJBr6-D8iTgNSTSyL6EZeMikhlacrJ8X54LvzO7-XbMU3G2dWtl6CnVsfyHfbFFjWel-V8-bQ&components=hosted-buttons&disable-funding=venmo&currency=JPY"></script>
+            <div id="paypal-container-534A3EWJLUPBC"></div>
+            <script>
+                paypal.HostedButtons({
+                    hostedButtonId: "534A3EWJLUPBC",
+                }).render("#paypal-container-534A3EWJLUPBC");
+            </script>
+        </div>
     </div>
     <div id="translate-button" onclick="handleTranslateButtonClick()">翻訳</div>
 </body>
