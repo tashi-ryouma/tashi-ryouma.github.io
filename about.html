@@ -159,7 +159,28 @@
                 gap: 10px;
                 padding: 10px 0;
             }
+             /* 自己紹介ページ専用の調整 */
+        .profile-container {
+            flex-direction: column; /* 縦並びに変更 */
+            align-items: center; /* 中央揃え */
+            text-align: center; /* テキストも中央揃え */
         }
+
+        .profile-container img {
+            width: 120px; /* 画像サイズ縮小 */
+            margin-bottom: 20px; /* 下に余白 */
+        }
+
+        .profile-details h2 {
+            font-size: 1.5em; /* タイトルサイズ調整 */
+            margin-bottom: 10px; /* 余白を追加 */
+        }
+
+        .profile-details p {
+            font-size: 0.9em; /* フォントサイズ調整 */
+            line-height: 1.5; /* 行間調整 */
+        }
+    }
         #translate-button {
             position: fixed;
             bottom: 20px;
