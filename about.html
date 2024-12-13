@@ -182,33 +182,21 @@
 /* PayPalボタンの親要素を中央揃え */
 .paypal-button-container {
     display: flex;
-    justify-content: center; /* 横方向の中央揃え */
-    align-items: center; /* 縦方向の中央揃え */
-    flex-direction: column; /* 縦方向に並べる */
-    width: 100%; /* 親要素の幅を100%にする */
-    max-width: 300px; /* 最大幅を300pxに制限 */
-    margin: 0 auto; /* 親要素を中央に配置 */
-    text-align: center; /* テキストを中央揃え */
-}
-
-/* PayPalボタン自体の調整 */
-#paypal-container-534A3EWJLUPBC {
-    display: flex; /* 必要に応じて中央揃えのためにflexを使用 */
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
+    width: 100%; /* 親要素の幅を100%にする */
+    max-width: 300px; /* 最大幅を300pxに制限 */
+    margin: 0 auto; /* 完全中央揃え */
+    text-align: center;
 }
 
-/* PayPal iframe の中央揃え */
 #paypal-container-534A3EWJLUPBC iframe {
     display: block;
-    margin: 0 auto; /* 横方向の中央揃え */
-    width: 100%; /* 親要素にフィット */
-    max-width: 300px; /* 最大幅を制限 */
-    height: auto; /* 高さを自動調整 */
+    margin: 0 auto; /* 中央揃え */
+    width: 100%;
+    max-width: 300px;
+    height: auto;
 }
 }
         #translate-button {
