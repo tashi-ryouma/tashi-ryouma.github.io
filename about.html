@@ -179,17 +179,17 @@
         font-size: 0.9em;
         line-height: 1.5;
     }
- .paypal-button-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        width: calc(100% - 40px);
-        max-width: 300px;
-        margin: 0 auto;
-        box-sizing: border-box;
-        overflow: hidden;
-    }
+/* PayPalボタンの親要素を中央揃え */
+.paypal-button-container {
+    display: flex;
+    justify-content: center; /* 横方向の中央揃え */
+    align-items: center; /* 縦方向の中央揃え */
+    flex-direction: column; /* 縦方向に並べる */
+    width: calc(100% - 40px); /* スマホ画面の幅に合わせて調整 */
+    max-width: 300px; /* 最大幅を300pxに制限 */
+    margin: 0 auto; /* 完全中央揃え */
+    box-sizing: border-box; /* パディングを含む幅調整 */
+}
 
     #paypal-container-534A3EWJLUPBC {
         display: flex;
@@ -201,11 +201,13 @@
         margin: 0 auto;
     }
 
+/* PayPalボタン自体を中央に */
 #paypal-container-534A3EWJLUPBC iframe {
-    width: 100%;
+    display: block; /* ブロック要素として扱う */
+    margin: 0 auto; /* 横方向の中央揃え */
+    width: 100%; /* 親要素の幅にフィット */
     max-width: 300px; /* 最大幅を制限 */
-    height: auto;
-    overflow: hidden; /* はみ出しを防止 */
+    height: auto; /* 縦横比を保つ */
 }
 }
         #translate-button {
