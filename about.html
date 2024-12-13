@@ -184,17 +184,18 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100%; /* 全幅を親要素に合わせる */
-    max-width: 300px; /* 最大幅を300pxに制限 */
-    margin: 0 auto; /* ボタンを中央に配置 */
-    padding: 10px; /* 余白を追加 */
+    width: calc(100% - 40px); /* 画面幅に合わせて調整、左右の余白を考慮 */
+    max-width: 300px; /* 最大幅を制限 */
+    margin: 0 auto; /* 中央揃え */
+    box-sizing: border-box; /* パディングを含む幅の計算を適用 */
+    overflow: hidden; /* はみ出しを防止 */
 }
 
-#paypal-container-534A3EWJLUPBC {
-    width: 100%; /* 親要素にフィット */
+#paypal-container-534A3EWJLUPBC iframe {
+    width: 100%;
     max-width: 300px; /* 最大幅を制限 */
-    margin: 0 auto; /* 中央に配置 */
-    text-align: center; /* テキストを中央揃え */
+    height: auto;
+    overflow: hidden; /* はみ出しを防止 */
 }
 }
         #translate-button {
