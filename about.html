@@ -179,17 +179,27 @@
         font-size: 0.9em;
         line-height: 1.5;
     }
-.paypal-button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: calc(100% - 40px); /* 画面幅に合わせて調整、左右の余白を考慮 */
-    max-width: 300px; /* 最大幅を制限 */
-    margin: 0 auto; /* 中央揃え */
-    box-sizing: border-box; /* パディングを含む幅の計算を適用 */
-    overflow: hidden; /* はみ出しを防止 */
-}
+ .paypal-button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: calc(100% - 40px);
+        max-width: 300px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    #paypal-container-534A3EWJLUPBC {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
 
 #paypal-container-534A3EWJLUPBC iframe {
     width: 100%;
@@ -211,31 +221,35 @@
             font-size: 0.8em;
         }
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const nav = document.querySelector('header nav');
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // メニューのトグル操作
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('header nav');
 
-            if (menuToggle && nav) {
-                menuToggle.addEventListener('click', function () {
-                    menuToggle.classList.toggle('active');
-                    nav.classList.toggle('active');
-                });
-            }
+        if (menuToggle && nav) {
+            menuToggle.addEventListener('click', function () {
+                menuToggle.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
+        }
 
-            // PayPalボタンのサイズ調整スクリプト
+        // PayPalボタンのサイズ調整スクリプト
         const paypalIframe = document.querySelector('#paypal-container-534A3EWJLUPBC iframe');
         if (paypalIframe) {
-            paypalIframe.style.width = '100%';       // 幅を親要素にフィット
+            paypalIframe.style.width = '100%';       // 親要素に幅をフィットさせる
             paypalIframe.style.maxWidth = '300px';  // 最大幅を300pxに制限
-            paypalIframe.style.height = 'auto';     // 高さを自動調整
+            paypalIframe.style.height = 'auto';     // 高さを自動で調整
+            paypalIframe.style.margin = '0 auto';   // ボタンを中央に配置
+            paypalIframe.style.display = 'block';   // ブロック要素として扱う
         }
-        });
+    });
 
-        function handleTranslateButtonClick() {
-            window.open('https://www.deepl.com/translator', '_blank');
-        }
-    </script>
+    // DeepL翻訳ボタンの操作
+    function handleTranslateButtonClick() {
+        window.open('https://www.deepl.com/translator', '_blank');
+    }
+</script>
 </head>
 <body>
     <header>
