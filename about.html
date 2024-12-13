@@ -179,7 +179,7 @@
         font-size: 0.9em;
         line-height: 1.5;
     }
-/* PayPalボタン全体の親要素を中央揃え */
+/* PayPalボタンの親要素を中央揃え */
 .paypal-button-container {
     display: flex;
     justify-content: center; /* 横方向の中央揃え */
@@ -187,9 +187,9 @@
     flex-direction: column; /* 縦方向に並べる */
     width: 100%; /* 親要素の幅を100%にする */
     max-width: 300px; /* 最大幅を300pxに制限 */
-    margin: 0 auto; /* 中央揃え */
+    margin: 0 auto; /* 親要素を中央に配置 */
     box-sizing: border-box; /* パディングを含めた幅を調整 */
-    text-align: center; /* テキスト中央揃え */
+    text-align: center; /* テキストを中央揃え */
 }
 
     #paypal-container-534A3EWJLUPBC {
@@ -202,7 +202,7 @@
         margin: 0 auto;
     }
 
-/* PayPalボタン自体を中央揃え */
+/* PayPalボタンのiframeを中央揃え */
 #paypal-container-534A3EWJLUPBC iframe {
     display: block; /* ブロック要素として扱う */
     margin: 0 auto; /* 横方向の中央揃え */
@@ -226,7 +226,7 @@
         }
     </style>
   <script>
-   document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('DOMContentLoaded', function () {
     // メニューのトグル操作
     const menuToggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('header nav');
@@ -238,23 +238,23 @@
         });
     }
 
-    // PayPalボタンのスタイル調整
+    // PayPalボタンの生成を監視してスタイルを適用
     const observer = new MutationObserver(() => {
         const paypalIframe = document.querySelector('#paypal-container-534A3EWJLUPBC iframe');
         if (paypalIframe) {
             paypalIframe.style.width = '100%';       // 親要素に幅をフィットさせる
             paypalIframe.style.maxWidth = '300px';  // 最大幅を300pxに制限
             paypalIframe.style.height = 'auto';     // 高さを自動調整
-            paypalIframe.style.margin = '0 auto';   // 完全中央揃え
+            paypalIframe.style.margin = '0 auto';   // ボタンを中央揃え
             paypalIframe.style.display = 'block';   // ブロック要素として扱う
         }
     });
 
-    // PayPalボタンが動的に生成されたタイミングを監視
-    observer.observe(document.querySelector('#paypal-container-534A3EWJLUPBC'), {
-        childList: true,
-        subtree: true,
-    });
+    // 監視対象の要素
+    const targetNode = document.querySelector('#paypal-container-534A3EWJLUPBC');
+    if (targetNode) {
+        observer.observe(targetNode, { childList: true, subtree: true });
+    }
 });
 
 // DeepL翻訳ボタンの操作
