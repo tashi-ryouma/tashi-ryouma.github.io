@@ -179,7 +179,7 @@
         font-size: 0.9em;
         line-height: 1.5;
     }
-/* PayPalボタンの親要素を中央揃え */
+/* PayPalボタン全体の親要素を中央揃え */
 .paypal-button-container {
     display: flex;
     justify-content: center; /* 横方向の中央揃え */
@@ -187,8 +187,9 @@
     flex-direction: column; /* 縦方向に並べる */
     width: 100%; /* 親要素の幅を100%にする */
     max-width: 300px; /* 最大幅を300pxに制限 */
-    margin: 0 auto; /* 親要素を中央に配置 */
+    margin: 0 auto; /* 中央揃え */
     box-sizing: border-box; /* パディングを含めた幅を調整 */
+    text-align: center; /* テキスト中央揃え */
 }
 
     #paypal-container-534A3EWJLUPBC {
@@ -206,7 +207,7 @@
     display: block; /* ブロック要素として扱う */
     margin: 0 auto; /* 横方向の中央揃え */
     width: 100%; /* 親要素の幅にフィット */
-    max-width: 300px; /* 最大幅を300pxに制限 */
+    max-width: 300px; /* 最大幅を制限 */
     height: auto; /* 縦横比を保つ */
     overflow: hidden; /* はみ出しを防止 */
 }
@@ -225,33 +226,41 @@
         }
     </style>
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // メニューのトグル操作
-        const menuToggle = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('header nav');
+   document.addEventListener('DOMContentLoaded', function () {
+    // メニューのトグル操作
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('header nav');
 
-        if (menuToggle && nav) {
-            menuToggle.addEventListener('click', function () {
-                menuToggle.classList.toggle('active');
-                nav.classList.toggle('active');
-            });
-        }
-
-        // PayPalボタンのサイズ調整スクリプト
-        const paypalIframe = document.querySelector('#paypal-container-534A3EWJLUPBC iframe');
-       if (paypalIframe) {
-        paypalIframe.style.width = '100%';       // 親要素に幅をフィットさせる
-        paypalIframe.style.maxWidth = '300px';  // 最大幅を300pxに制限
-        paypalIframe.style.height = 'auto';     // 高さを自動調整
-        paypalIframe.style.margin = '0 auto';   // 完全中央揃え
-        paypalIframe.style.display = 'block';   // ブロック要素として扱う
+    if (menuToggle && nav) {
+        menuToggle.addEventListener('click', function () {
+            menuToggle.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
     }
+
+    // PayPalボタンのスタイル調整
+    const observer = new MutationObserver(() => {
+        const paypalIframe = document.querySelector('#paypal-container-534A3EWJLUPBC iframe');
+        if (paypalIframe) {
+            paypalIframe.style.width = '100%';       // 親要素に幅をフィットさせる
+            paypalIframe.style.maxWidth = '300px';  // 最大幅を300pxに制限
+            paypalIframe.style.height = 'auto';     // 高さを自動調整
+            paypalIframe.style.margin = '0 auto';   // 完全中央揃え
+            paypalIframe.style.display = 'block';   // ブロック要素として扱う
+        }
     });
 
-    // DeepL翻訳ボタンの操作
-    function handleTranslateButtonClick() {
-        window.open('https://www.deepl.com/translator', '_blank');
-    }
+    // PayPalボタンが動的に生成されたタイミングを監視
+    observer.observe(document.querySelector('#paypal-container-534A3EWJLUPBC'), {
+        childList: true,
+        subtree: true,
+    });
+});
+
+// DeepL翻訳ボタンの操作
+function handleTranslateButtonClick() {
+    window.open('https://www.deepl.com/translator', '_blank');
+}
 </script>
 </head>
 <body>
