@@ -130,72 +130,74 @@
         .paypal-button-container {
             text-align: center;
         }
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: flex;
-                flex-direction: column;
-                cursor: pointer;
-                position: relative;
-                z-index: 10;
-                padding: 10px;
-            }
-            header nav {
-                display: none;
-                position: absolute;
-                top: 100%;
-                right: 0;
-                background-color: #121212;
-                width: 100%;
-                flex-direction: column;
-                align-items: center;
-                z-index: 9;
-            }
-            header nav.active {
-                display: flex;
-            }
-            header nav ul {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-                padding: 10px 0;
-            }
-             /* 自己紹介ページ専用の調整 */
-        .profile-container {
-            flex-direction: column; /* 縦並びに変更 */
-            align-items: center; /* 中央揃え */
-            text-align: center; /* テキストも中央揃え */
-        }
+       @media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        position: relative;
+        z-index: 10;
+        padding: 10px;
+    }
+    header nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #121212;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        z-index: 9;
+    }
+    header nav.active {
+        display: flex;
+    }
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 0;
+    }
 
-        .profile-container img {
-    width: 120px; /* 画像の幅を固定 */
-    height: auto; /* 自動で縦横比を保つ */
-    margin-bottom: 20px; /* 下に余白 */
-}
+    /* 自己紹介ページ専用の調整 */
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .profile-container img {
+        width: 120px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    .profile-details h2 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+    .profile-details p {
+        font-size: 0.9em;
+        line-height: 1.5;
+    }
 
-
-        .profile-details h2 {
-            font-size: 1.5em; /* タイトルサイズ調整 */
-            margin-bottom: 10px; /* 余白を追加 */
-        }
-
-        .profile-details p {
-            font-size: 0.9em; /* フォントサイズ調整 */
-            line-height: 1.5; /* 行間調整 */
-        }
-             /* PayPal専用のスマホ調整 */
+    /* PayPal専用の調整 */
     .paypal-button-container {
-        width: 100%; /* 横幅を親要素にフィット */
-        max-width: 300px; /* 最大幅を制限 */
-        margin: 0 auto; /* 中央揃え */
-        padding: 10px; /* 余白追加 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 10px;
     }
-
     #paypal-container-534A3EWJLUPBC iframe {
-        width: 100%; /* PayPalのiframeを親要素にフィット */
-        max-width: 300px; /* 最大幅を制限 */
-        height: auto; /* 高さを自動調整 */
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        margin-bottom: 10px;
     }
-    }
+}
         #translate-button {
             position: fixed;
             bottom: 20px;
