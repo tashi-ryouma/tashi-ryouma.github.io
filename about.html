@@ -221,6 +221,14 @@
                     nav.classList.toggle('active');
                 });
             }
+
+            // PayPalボタンのサイズ調整スクリプト
+        const paypalIframe = document.querySelector('#paypal-container-534A3EWJLUPBC iframe');
+        if (paypalIframe) {
+            paypalIframe.style.width = '100%';       // 幅を親要素にフィット
+            paypalIframe.style.maxWidth = '300px';  // 最大幅を300pxに制限
+            paypalIframe.style.height = 'auto';     // 高さを自動調整
+        }
         });
 
         function handleTranslateButtonClick() {
