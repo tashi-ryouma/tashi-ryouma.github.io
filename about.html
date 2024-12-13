@@ -188,28 +188,27 @@
     width: 100%; /* 親要素の幅を100%にする */
     max-width: 300px; /* 最大幅を300pxに制限 */
     margin: 0 auto; /* 親要素を中央に配置 */
-    box-sizing: border-box; /* パディングを含めた幅を調整 */
     text-align: center; /* テキストを中央揃え */
 }
 
-    #paypal-container-534A3EWJLUPBC {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
-    }
+/* PayPalボタン自体の調整 */
+#paypal-container-534A3EWJLUPBC {
+    display: flex; /* 必要に応じて中央揃えのためにflexを使用 */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
 
-/* PayPalボタンのiframeを中央揃え */
+/* PayPal iframe の中央揃え */
 #paypal-container-534A3EWJLUPBC iframe {
-    display: block; /* ブロック要素として扱う */
+    display: block;
     margin: 0 auto; /* 横方向の中央揃え */
-    width: 100%; /* 親要素の幅にフィット */
+    width: 100%; /* 親要素にフィット */
     max-width: 300px; /* 最大幅を制限 */
-    height: auto; /* 縦横比を保つ */
-    overflow: hidden; /* はみ出しを防止 */
+    height: auto; /* 高さを自動調整 */
 }
 }
         #translate-button {
@@ -238,19 +237,19 @@
         });
     }
 
-    // PayPalボタンの生成を監視してスタイルを適用
+   // PayPalボタンのスタイルを適用
     const observer = new MutationObserver(() => {
         const paypalIframe = document.querySelector('#paypal-container-534A3EWJLUPBC iframe');
         if (paypalIframe) {
-            paypalIframe.style.width = '100%';       // 親要素に幅をフィットさせる
+            paypalIframe.style.width = '100%';       // 幅を親要素に合わせる
             paypalIframe.style.maxWidth = '300px';  // 最大幅を300pxに制限
             paypalIframe.style.height = 'auto';     // 高さを自動調整
-            paypalIframe.style.margin = '0 auto';   // ボタンを中央揃え
+            paypalIframe.style.margin = '0 auto';   // 中央揃え
             paypalIframe.style.display = 'block';   // ブロック要素として扱う
         }
     });
 
-    // 監視対象の要素
+    // 監視対象のノード
     const targetNode = document.querySelector('#paypal-container-534A3EWJLUPBC');
     if (targetNode) {
         observer.observe(targetNode, { childList: true, subtree: true });
