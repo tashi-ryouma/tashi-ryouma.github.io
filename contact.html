@@ -104,14 +104,19 @@
             margin-top: 30px;
         }
         .contact-icons a {
-            display: inline-block;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-decoration: none;
             color: #ffffff;
             text-align: center;
             font-size: 0.9em;
             background-color: #1f1f1f;
-            padding: 10px;
+            padding: 20px;
             border-radius: 10px;
+            width: 120px;
+            height: 150px;
             transition: transform 0.3s;
         }
         .contact-icons a:hover {
@@ -120,6 +125,7 @@
         .contact-icons img {
             width: 60px;
             height: 60px;
+            margin-bottom: 10px;
         }
         @media (max-width: 768px) {
             .menu-toggle {
@@ -203,7 +209,7 @@
     </header> 
     <div class="page-content">
         <h1>お問い合わせ</h1>
-        <p>以下の方法でお気軽にお問い合わせください！</p>
+        <p>以下の方法でお気軽にお問い合わせください。</p>
         <div class="contact-icons">
             <a href="mailto:tashiryouma@mail.com">
                 <img src="emailaikon.png" alt="Email Icon">
