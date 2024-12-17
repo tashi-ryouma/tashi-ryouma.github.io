@@ -130,13 +130,17 @@
             margin-top: 40px;
         }
         .tool-card {
-            background-color: #1f1f1f;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease;
-            position: relative;
-        }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 上下の要素配置 */
+    align-items: center;
+    min-height: 450px; /* カードの高さ統一 */
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
         .tool-card .badge {
             position: absolute;
             top: 10px;
@@ -152,20 +156,20 @@
             transform: scale(1.05);
         }
         .tool-card img {
-            width: 45%;
-            height: auto;
-            border-radius: 10px;
-            max-width: 90px;
-        }
+    width: 80px;
+    margin: 10px 0;
+}
         .tool-card h3 {
-            font-size: 1.5em;
-            margin: 15px 0;
-        }
+    margin: 10px 0;
+    font-size: 1.4em;
+    min-height: 50px; /* タイトルの高さ確保 */
+}
+
         .tool-card p {
-            font-size: 1em;
-            line-height: 1.4;
-            margin-bottom: 20px;
-        }
+    flex: 1; /* 説明を伸ばしてボタンを下に */
+    margin-bottom: 20px;
+    font-size: 0.95em;
+}
         .tool-card .button-group {
             display: flex;
             gap: 10px;
@@ -194,6 +198,36 @@
         .tool-card .details-button:hover {
             background-color: #777;
         }
+        .button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.try-button, .details-button {
+    width: 45%; /* ボタンの幅統一 */
+    padding: 10px 15px;
+    text-align: center;
+    border-radius: 5px;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.try-button {
+    background-color: #ff6347;
+}
+
+.details-button {
+    background-color: #555;
+}
+
+.try-button:hover {
+    background-color: #ff4500;
+}
+
+.details-button:hover {
+    background-color: #777;
+}
         @media (max-width: 768px) {
             .menu-toggle {
                 display: flex;
