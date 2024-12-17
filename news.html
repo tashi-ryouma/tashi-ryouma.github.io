@@ -35,6 +35,17 @@
             height: auto;
             margin: 5px;
         }
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .menu-toggle div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 4px;
+        }
         header nav {
             flex: 3;
             text-align: right;
@@ -52,20 +63,43 @@
         header nav ul li {
             display: inline-block;
         }
+        header nav ul li:not(:last-child)::after {
+            content: '|';
+            margin-left: 10px;
+            color: #777;
+        }
+        header nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            line-height: 1.2;
+            transition: color 0.3s ease;
+            font-family: 'Futura', sans-serif;
+        }
+        header nav ul li a:hover {
+            color: #ff6347;
+        }
         .page-content {
             padding: 140px 20px;
             text-align: center;
         }
+        .page-content h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
         .anime-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
+            margin-top: 20px;
         }
         .anime-card {
             background-color: #1f1f1f;
             border-radius: 10px;
             padding: 15px;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s ease;
         }
         .anime-card:hover {
@@ -79,36 +113,93 @@
         }
         .anime-card h3 {
             font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+        .anime-card p {
+            font-size: 1em;
+            line-height: 1.5;
+            color: #ccc;
+            margin-bottom: 10px;
         }
         .anime-details {
             font-size: 0.9em;
             color: #aaa;
+            margin-bottom: 10px;
         }
         .like-button {
             background-color: #ff6347;
             color: #fff;
-            padding: 10px;
+            border: none;
+            padding: 10px 15px;
             border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        .like-button:hover {
+            background-color: #ff4500;
+        }
+        .like-count {
+            margin-top: 5px;
+            font-size: 0.9em;
+            color: #fff;
         }
         @media (max-width: 768px) {
-            .anime-grid {
-                grid-template-columns: 1fr;
+            .menu-toggle {
+                display: flex;
+                flex-direction: column;
+                cursor: pointer;
+                position: relative;
+                z-index: 10;
+                padding: 10px;
+            }
+            header nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background-color: #121212;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                z-index: 9;
+            }
+            header nav.active {
+                display: flex;
+            }
+            header nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                padding: 10px 0;
             }
         }
     </style>
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('header nav');
+            
+            if (menuToggle && nav) {
+                menuToggle.addEventListener('click', function () {
+                    menuToggle.classList.toggle('active');
+                    nav.classList.toggle('active');
+                });
+            }
+        });
+        
         const likedItems = new Set();
         function increaseLike(button) {
             const card = button.closest('.anime-card');
             const countSpan = button.nextElementSibling;
-            const animeId = card.dataset.animeId;
+            const animeId = card.dataset.animeId; // 一意のIDを取得
+            
             if (!likedItems.has(animeId)) {
                 let count = parseInt(countSpan.textContent);
                 count++;
                 countSpan.textContent = count;
                 likedItems.add(animeId);
+                button.disabled = true; // ボタンを無効化
                 button.textContent = '👍 いいね済';
-                button.disabled = true;
             }
         }
     </script>
@@ -116,92 +207,46 @@
 <body>
     <header>
         <div class="logo"><img src="AnimeLab.png" alt="Anime Lab Logo"></div>
+        <div class="menu-toggle">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="tools.html">AIツール紹介</a></li>
+                <li><a href="community.html">アニメコミュニティ</a></li>
+                <li><a href="news.html">最新アニメニュース</a></li>
+                <li><a href="about.html">自己紹介</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
     </header>
     <div class="page-content">
         <h1>最新アニメニュース</h1>
         <div class="anime-grid">
-            <!-- Anime Cards -->
             <div class="anime-card" data-anime-id="anime1">
                 <img src="anime1.jpg" alt="アニメ1">
-                <h3>アニメタイトル1</h3>
-                <div class="anime-details">制作会社: Studio A | 放送時期: 2025年春</div>
+                <h3>クラスの大嫌いな女子と結婚することになった。</h3>
+                <div class="anime-details">制作会社: Studio五組, AXsiZ | 放送時期: 2025年冬</div>
+                <p>予測不能な展開で送るラブコメディ。</p>
                 <button class="like-button" onclick="increaseLike(this)">👍 いいね</button>
                 <div class="like-count">0</div>
             </div>
             <div class="anime-card" data-anime-id="anime2">
                 <img src="anime2.jpg" alt="アニメ2">
-                <h3>アニメタイトル2</h3>
-                <div class="anime-details">制作会社: Studio B | 放送時期: 2025年夏</div>
+                <h3>グリザイア：ファントムトリガー</h3>
+                <div class="anime-details">制作会社: パイプドリームアニメーションスタジオ | 放送時期: 2025年冬</div>
+                <p>迫力のバトルと友情が織りなす物語。</p>
                 <button class="like-button" onclick="increaseLike(this)">👍 いいね</button>
                 <div class="like-count">0</div>
             </div>
             <div class="anime-card" data-anime-id="anime3">
                 <img src="anime3.jpg" alt="アニメ3">
-                <h3>アニメタイトル3</h3>
-                <div class="anime-details">制作会社: Studio C | 放送時期: 2025年秋</div>
-                <button class="like-button" onclick="increaseLike(this)">👍 いいね</button>
-                <div class="like-count">0</div>
-            </div>
-            <div class="anime-card" data-anime-id="anime4">
-                <img src="anime4.jpg" alt="アニメ4">
-                <h3>アニメタイトル4</h3>
-                <div class="anime-details">制作会社: Studio D | 放送時期: 2025年冬</div>
-                <button class="like-button" onclick="increaseLike(this)">👍 いいね</button>
-                <div class="like-count">0</div>
-            </div>
-            <div class="anime-card" data-anime-id="anime5">
-                <img src="anime5.jpg" alt="アニメ5">
-                <h3>アニメタイトル5</h3>
-                <div class="anime-details">制作会社: Studio E | 放送時期: 2025年春</div>
-                <button class="like-button" onclick="increaseLike(this)">👍 いいね</button>
-                <div class="like-count">0</div>
-            </div>
-            <div class="anime-card" data-anime-id="anime6">
-                <img src="anime6.jpg" alt="アニメ6">
-                <h3>アニメタイトル6</h3>
-                <div class="anime-details">制作会社: Studio F | 放送時期: 2025年夏</div>
-                <button class="like-button" onclick="increaseLike(this)">👍 いいね</button>
-                <div class="like-count">0</div>
-            </div>
-            <div class="anime-card" data-anime-id="anime7">
-                <img src="anime7.jpg" alt="アニメ7">
-                <h3>アニメタイトル7</h3>
-                <div class="anime-details">制作会社: Studio G | 放送時期: 2025年秋</div>
-                <button class="like-button" onclick="increaseLike(this)">👍 いいね</button>
-                <div class="like-count">0</div>
-            </div>
-            <div class="anime-card" data-anime-id="anime8">
-                <img src="anime8.jpg" alt="アニメ8">
-                <h3>アニメタイトル8</h3>
-                <div class="anime-details">制作会社: Studio H | 放送時期: 2025年冬</div>
-                <button class="like-button" onclick="increaseLike(this)">👍 いいね</button>
-                <div class="like-count">0</div>
-            </div>
-            <div class="anime-card" data-anime-id="anime9">
-                <img src="anime9.jpg" alt="アニメ9">
-                <h3>アニメタイトル9</h3>
-                <div class="anime-details">制作会社: Studio I | 放送時期: 2025年春</div>
-                <button class="like-button" onclick="increaseLike(this)">👍 いいね</button>
-                <div class="like-count">0</div>
-            </div>
-            <div class="anime-card" data-anime-id="anime10">
-                <img src="anime10.jpg" alt="アニメ10">
-                <h3>アニメタイトル10</h3>
-                <div class="anime-details">制作会社: Studio J | 放送時期: 2025年夏</div>
-                <button class="like-button" onclick="increaseLike(this)">👍 いいね</button>
-                <div class="like-count">0</div>
-            </div>
-            <div class="anime-card" data-anime-id="anime11">
-                <img src="anime11.jpg" alt="アニメ11">
-                <h3>アニメタイトル11</h3>
-                <div class="anime-details">制作会社: Studio K | 放送時期: 2025年秋</div>
-                <button class="like-button" onclick="increaseLike(this)">👍 いいね</button>
-                <div class="like-count">0</div>
-            </div>
-            <div class="anime-card" data-anime-id="anime12">
-                <img src="anime12.jpg" alt="アニメ12">
-                <h3>アニメタイトル12</h3>
-                <div class="anime-details">制作会社: Studio L | 放送時期: 2025年冬</div>
+                <h3>黒岩メダカに私の可愛いが通じない</h3>
+                <div class="anime-details">制作会社: SynergySP | 放送時期: 2025年冬</div>
+                <p>学園ラブコメディの新たな金字塔！</p>
                 <button class="like-button" onclick="increaseLike(this)">👍 いいね</button>
                 <div class="like-count">0</div>
             </div>
