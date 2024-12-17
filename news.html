@@ -187,11 +187,20 @@
             }
         });
         
+        const likedItems = new Set();
         function increaseLike(button) {
+            const card = button.closest('.anime-card');
             const countSpan = button.nextElementSibling;
-            let count = parseInt(countSpan.textContent);
-            count++;
-            countSpan.textContent = count;
+            const animeId = card.dataset.animeId; // 一意のIDを取得
+            
+            if (!likedItems.has(animeId)) {
+                let count = parseInt(countSpan.textContent);
+                count++;
+                countSpan.textContent = count;
+                likedItems.add(animeId);
+                button.disabled = true; // ボタンを無効化
+                button.textContent = '👍 いいね済';
+            }
         }
     </script>
 </head>
@@ -217,36 +226,28 @@
     <div class="page-content">
         <h1>最新アニメニュース</h1>
         <div class="anime-grid">
-            <div class="anime-card">
+            <div class="anime-card" data-anime-id="anime1">
                 <img src="anime1.jpg" alt="アニメ1">
                 <h3>クラスの大嫌いな女子と結婚することになった。</h3>
                 <div class="anime-details">制作会社: Studio五組, AXsiZ | 放送時期: 2025年冬</div>
                 <p>予測不能な展開で送るラブコメディ。</p>
-                <button class="like-button" onclick="increaseLike(this)">いいね</button>
+                <button class="like-button" onclick="increaseLike(this)">👍 いいね</button>
                 <div class="like-count">0</div>
             </div>
-            <div class="anime-card">
+            <div class="anime-card" data-anime-id="anime2">
                 <img src="anime2.jpg" alt="アニメ2">
                 <h3>グリザイア：ファントムトリガー</h3>
                 <div class="anime-details">制作会社: パイプドリームアニメーションスタジオ | 放送時期: 2025年冬</div>
                 <p>迫力のバトルと友情が織りなす物語。</p>
-                <button class="like-button" onclick="increaseLike(this)">いいね</button>
+                <button class="like-button" onclick="increaseLike(this)">👍 いいね</button>
                 <div class="like-count">0</div>
             </div>
-            <div class="anime-card">
+            <div class="anime-card" data-anime-id="anime3">
                 <img src="anime3.jpg" alt="アニメ3">
                 <h3>黒岩メダカに私の可愛いが通じない</h3>
                 <div class="anime-details">制作会社: SynergySP | 放送時期: 2025年冬</div>
                 <p>学園ラブコメディの新たな金字塔！</p>
-                <button class="like-button" onclick="increaseLike(this)">いいね</button>
-                <div class="like-count">0</div>
-            </div>
-            <div class="anime-card">
-                <img src="anime4.jpg" alt="アニメ4">
-                <h3>五等分の花嫁＊（テレビスペシャル）</h3>
-                <div class="anime-details">制作会社: バイブリーアニメーションスタジオ | 放送時期: 2025年冬</div>
-                <p>大人気シリーズの特別エピソードが登場。</p>
-                <button class="like-button" onclick="increaseLike(this)">いいね</button>
+                <button class="like-button" onclick="increaseLike(this)">👍 いいね</button>
                 <div class="like-count">0</div>
             </div>
         </div>
