@@ -181,34 +181,18 @@
         }
     </style>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const nav = document.querySelector('header nav');
-            
-            if (menuToggle && nav) {
-                menuToggle.addEventListener('click', function () {
-                    menuToggle.classList.toggle('active');
-                    nav.classList.toggle('active');
-                });
-            }
-        });
+    document.addEventListener('DOMContentLoaded', function () {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('header nav');
         
-        const likedItems = new Set();
-        function increaseLike(button) {
-            const card = button.closest('.anime-card');
-            const countSpan = button.nextElementSibling;
-            const animeId = card.dataset.animeId; 
-            
-            if (!likedItems.has(animeId)) {
-                let count = parseInt(countSpan.textContent);
-                count++;
-                countSpan.textContent = count;
-                likedItems.add(animeId);
-                button.disabled = true;
-                button.textContent = '👍 いいね済';
-            }
+        if (menuToggle && nav) {
+            menuToggle.addEventListener('click', function () {
+                menuToggle.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
         }
-    </script>
+    });
+</script>
 </head>
 <body>
     <header>
@@ -249,9 +233,7 @@
         陰謀渦巻く後宮で、天才的な毒物の知識と冷静な頭脳で謎を解き明かす。  
         第2期の**後宮ミステリー**に目が離せない！
     </p>
-        <button class="like-button" onclick="increaseLike(this)">👍 いいね</button>
-        <div class="like-count">0</div>
-    </div>
+           </div>
 
     <!-- アニメ2 -->
     <div class="anime-card" data-anime-id="anime2">
@@ -267,9 +249,7 @@
         強い絆と情熱を描く『メダリスト』がついにアニメ化。<br>
         OPテーマは米津玄師の「BOW AND ARROW」！
     </p>
-        <button class="like-button" onclick="increaseLike(this)">👍 いいね</button>
-        <div class="like-count">0</div>
-    </div>
+          </div>
 
     <!-- アニメ3 -->
     <div class="anime-card" data-anime-id="anime3">
@@ -285,9 +265,7 @@
         パンチ一発で敵を倒す痛快アクション！  
         第3期では、怪人協会との壮絶な戦いが幕を開ける――。
     </p>
-        <button class="like-button" onclick="increaseLike(this)">👍 いいね</button>
-        <div class="like-count">0</div>
-    </div>
+          </div>
 
     <!-- アニメ4 -->
     <div class="anime-card" data-anime-id="anime6">
@@ -307,9 +285,7 @@
         家族、友人、そして日常が狂い出す――。<br>
         異様な「夏」の真相に迫る、戦慄のサスペンスアニメ。
     </p>
-    <button class="like-button" onclick="increaseLike(this)">👍 いいね</button>
-    <div class="like-count">0</div>
-</div>
+ </div>
 
     <!-- アニメ5 -->
     <div class="anime-card" data-anime-id="anime7">
@@ -330,9 +306,7 @@
         2025年1月11日放送開始！<br>
         幻想的な舞台設定と複雑な人間模様が展開する。
     </p>
-    <button class="like-button" onclick="increaseLike(this)">👍 いいね</button>
-    <div class="like-count">0</div>
-</div>
+  </div>
 
     <!-- アニメ6 -->
     <div class="anime-card" data-anime-id="anime3">
@@ -348,8 +322,6 @@
         五つ子たちの新婚旅行編が描かれる新作アニメーション。<br>
         風太郎と五つ子のハワイ旅行を舞台に、未公開のエピソードが展開されます。
     </p>
-    <button class="like-button" onclick="increaseLike(this)">👍 いいね</button>
-    <div class="like-count">0</div>
 </div>
 </div>
        </div>
