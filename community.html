@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>小説紹介ページ</title>
+    <title>多士亮磨の小説紹介ページ</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -63,6 +63,23 @@
         header nav ul li {
             display: inline-block;
         }
+        header nav ul li:not(:last-child)::after {
+            content: '|';
+            margin-left: 10px;
+            color: #777;
+        }
+        header nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            line-height: 1.2;
+            transition: color 0.3s ease;
+            font-family: 'Futura', sans-serif;
+        }
+        header nav ul li a:hover {
+            color: #ff6347;
+        }
         .page-content {
             padding: 140px 20px;
             max-width: 1200px;
@@ -109,12 +126,29 @@
         .novel-card .kindle-embed {
             margin: 20px 0;
         }
+        #translate-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #555;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 50px;
+            cursor: pointer;
+            z-index: 999;
+            font-size: 0.8em;
+        }
         @media (max-width: 768px) {
             .novel-grid {
                 grid-template-columns: 1fr;
             }
         }
     </style>
+    <script>
+        function handleTranslateButtonClick() {
+            window.open('https://www.deepl.com/translator', '_blank');
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -156,5 +190,6 @@
             </div>
         </div>
     </div>
+    <div id="translate-button" onclick="handleTranslateButtonClick()">翻訳</div>
 </body>
 </html>
