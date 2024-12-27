@@ -139,8 +139,15 @@
             font-size: 0.8em;
         }
         @media (max-width: 768px) {
+            header nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
             .novel-grid {
                 grid-template-columns: 1fr;
+            }
+            .page-content {
+                padding: 100px 10px;
             }
         }
     </style>
