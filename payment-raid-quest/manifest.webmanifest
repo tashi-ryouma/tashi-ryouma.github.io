@@ -1,0 +1,18 @@
+{
+  "name": "支払い討伐Quest",
+  "short_name": "討伐Quest",
+  "description": "Uber稼働、支払い進捗、衝動回避を見える化するスマホ向けPWA",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#101428",
+  "theme_color": "#101428",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
