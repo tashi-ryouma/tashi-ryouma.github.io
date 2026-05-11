@@ -1,4 +1,4 @@
-const CACHE_NAME = "payment-raid-quest-v1";
+const CACHE_NAME = "payment-raid-quest-v2";
 const appShell = ["./", "index.html", "manifest.webmanifest", "icon.svg"];
 const toScopeUrl = (path) => new URL(path, self.registration.scope).toString();
 
