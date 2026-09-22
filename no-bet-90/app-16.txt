@@ -1,0 +1,13 @@
+astOperationalMonth=month;renderAll()}
+}
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){refreshForClockChange();renderAll()}});
+setInterval(refreshForClockChange,60000);
+
+renderAll();
+const emergencyShortcut=(()=>{try{return new URLSearchParams(location.search).get('emergency')==='1'}catch{return false}})();
+if(data.emergencyStartedAt&&unresolvedEmergencyEvent())setTimeout(renderEmergency,80);
+else if(emergencyShortcut)setTimeout(openEmergency,80);
+
+</script>
+</body>
+</html>
