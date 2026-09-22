@@ -1,0 +1,5 @@
+const CACHE='no-bet-90-v8-pwa-1';
+const ASSETS=["./", "./index.html", "./manifest.json", "./icon-192.png", "./icon-512.png", "./app-01.txt", "./app-02.txt", "./app-03.txt", "./app-04.txt", "./app-05.txt", "./app-06.txt", "./app-07.txt", "./app-08.txt", "./app-09.txt", "./app-10.txt", "./app-11.txt", "./app-12.txt", "./app-13.txt", "./app-14.txt", "./app-15.txt", "./app-16.txt"];
+self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
+self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==CACHE).map(x=>caches.delete(x)))).then(()=>self.clients.claim())));
+self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;if(e.request.mode==='navigate'){e.respondWith(fetch(e.request).catch(()=>caches.match('./index.html')));return}e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request).then(res=>{if(res&&res.ok){const cp=res.clone();caches.open(CACHE).then(c=>c.put(e.request,cp))}return res}))) });
