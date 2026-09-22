@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#080b12" />
+  <meta name="description" content="ギャンブル衝動を止め、Uber稼働・貯金・支払い・生活成長を一体管理する生活防衛PWA" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>NO BET 90</title>
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <header class="topbar">
+      <div class="brand-lockup">
+        <div class="brand-mark" aria-hidden="true">N</div>
+        <div>
+          <div class="eyebrow">LIFE DEFENSE</div>
+          <h1>NO BET <span>90</span></h1>
+        </div>
+      </div>
+      <button id="installBtn" class="ghost-btn compact-btn hidden">アプリとして追加</button>
+    </header>
+
+    <aside id="backupNotice" class="backup-notice hidden" aria-live="polite">
+      <span>データのバックアップ時期です。</span>
+      <button id="backupNoticeBtn" class="text-btn">今すぐ保存</button>
+    </aside>
+
+    <main>
+      <section id="heroCard" class="visual-hero card">
+        <img id="growthBackground" class="hero-bg" alt="成長に応じて変化する生活背景" />
+        <div class="hero-bg-shade"></div>
+        <div class="hero-glow"></div>
+
+        <div class="hero-statusbar">
+          <div class="hero-topline"><span id="statusDot" class="status-dot"></span><span id="heroStateLabel">NO GAMBLING — DAY 1 / 90</span></div>
+          <div class="hero-day-chip"><span id="streakDays">0日</span> STREAK</div>
+        </div>
+
+        <div class="character-stage">
+          <img id="growthCharacter" class="hero-character" alt="成長アバター" />
+          <div class="character-shadow"></div>
+        </div>
+
+        <div class="hero-growth-panel">
+          <div class="hero-level-line">
+            <span id="heroGrowthLevel" class="level-badge">Lv.1</span>
+            <div class="hero-level-copy"><strong id="heroGrowthStage">RESTART I</strong><span id="heroGrowthTitle">再起動前</span></div>
+          </div>
+          <div class="hero-xp-row"><span id="heroGrowthXpLabel">0 GROWTH</span><span id="heroGrowthNextLabel">NEXT RESTART II</span></div>
+          <div class="hero-xp-track"><div id="heroGrowthProgress"></div></div>
+          <div class="hero-next-grid" aria-label="次の成長目標">
+            <div class="hero-next-box">
+              <span>次の称号</span>
+              <strong id="heroNextTitleName">RESTART II</strong>
+              <small id="heroNextTitleRemain">あと 27 GROWTH</small>
+            </div>
+            <div class="hero-next-box evolution">
+              <span>次の大進化</span>
+              <strong id="heroNextEvolutionName">Lv.2 SPARK</strong>
+              <small id="heroNextEvolutionRemain">あと 80 GROWTH</small>
+            </div>
+          </div>
+          <div id="heroGrowthMotivation" class="hero-growth-motivation">今日を守る +10 / Uber達成 +5</div>
+        </div>
+
+        <div class="hero-sheet">
+          <div class="protected-row">
+            <div><span class="sheet-label">今日守っている最低額</span><strong id="protectedAmount">¥33,000</strong></div>
+            <div class="mini-days"><span>累計</span><strong id="cleanDays">0日</strong></div>
+          </div>
+          <div id="shieldCaption" class="shield-caption">今日ギャンブルをしないことで守る最低額</div>
+
+          <div class="value-alternatives" id="valueAlternatives">
+            <div class="value-alternatives-head"><span>この損失を防げば</span><strong id="valueAlternativesAmount">¥33,000</strong></div>
+            <div id="valueAlternativesList" class="value-alternatives-list" aria-label="この金額でできることの例"></div>
+            <div class="value-alternatives-foot">※金額を日常の選択肢に置き換えた換算例。毎日3例が変わります。</div>
+          </div>
+
+          <div id="todayCommand" class="today-command">最優先：防衛開始 → Uberを1件</div>
+
+          <div class="hero-actions">
+            <button id="urgeBtn" class="danger-btn">今、ギャンブルに行きたい</button>
+            <button id="safeTodayBtn" class="primary-btn">今日の防衛を開始</button>
+          </div>
+          <p id="heroHint" class="microcopy hero-hint">最初に「今日の防衛を開始」。1日を終える時に同じボタンで完了します。</p>
+
+          <div class="hero-dashboard" aria-label="今日の状態">
+            <a href="#uberSection"><span>Uber</span><strong id="heroUber">0 / 20</strong></a>
+            <a href="#paymentSection"><span>支払い</span><strong id="heroPayment">0 / 0</strong></a>
+            <a href="#savingsSection"><span>貯金</span><strong id="heroSavings">¥0</strong></a>
+            <a href="#growthSection"><span>禁ギャンブル</span><strong id="heroStreak">0日</strong></a>
+          </div>
+
+          <details class="loss-details">
+            <summary>1回の損失影響を確認</summary>
+            <div class="split-metrics">
+              <div><span>直接損失</span><strong id="avoidGamble">¥20,000</strong></div>
+              <div><span>当日稼働</span><strong id="avoidUber">¥13,000</strong></div>
+              <div><span>後日の影響</span><strong id="avoidAfter">未設定</strong></div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section id="uberSection" class="card progress-card single-card">
+        <div class="section-title-row">
+          <div><div class="eyebrow">TODAY MISSION</div><h2>Uber 稼働</h2></div>
+          <span id="todayDate" class="muted"></span>
+        </div>
+        <div class="uber-layout">
+          <div class="delivery-ring-wrap">
+            <div id="deliveryRing" class="delivery-ring" aria-label="今日の配達進捗">
+              <div class="delivery-ring-inner"><strong id="deliveryCount">0</strong><span id="deliveryTargetLabel">/ 20件</span></div>
+            </div>
+          </div>
+          <div class="uber-controls">
+            <div class="quick-actions">
+              <button id="minusDelivery" class="counter-btn" aria-label="配達件数を1減らす">−1</button>
+              <button id="plusDelivery" class="counter-btn accent">+1 配達</button>
+              <button id="setDelivery" class="counter-btn">件数入力</button>
+            </div>
+            <label class="field-label" for="earningsInput">今日の売上</label>
+            <div class="money-input-row"><span>¥</span><input id="earningsInput" inputmode="numeric" type="number" min="0" step="100" placeholder="0" /><button id="saveEarnings" class="small-btn">保存</button></div>
+          </div>
+        </div>
+        <div class="progress-line"><div id="deliveryProgress"></div></div>
+        <div id="todayStatus" class="microcopy">まず1件。1件終われば流れが変わる。</div>
+        <div class="monthly-line"><span>今月のUber売上</span><strong id="monthlyUber">¥0</strong></div>
+      </section>
+
+      <section id="paymentSection" class="card payment-card">
+        <div class="section-title-row wrap-gap">
+          <div><div class="eyebrow">PAYMENT DEFENSE</div><h2>支払い管理</h2><p class="muted compact" id="paymentMonthLabel"></p></div>
+          <div class="payment-summary">
+            <div><span>合計</span><strong id="paymentTotal">¥0</strong></div>
+            <div><span>支払済</span><strong id="paymentPaid">¥0</strong></div>
+            <div><span>残り</span><strong id="paymentRemain">¥0</strong></div>
+          </div>
+        </div>
+        <div class="payment-progress"><div id="paymentProgressBar"></div></div>
+        <div id="arrearsBox" class="arrears-box hidden"></div>
+        <div id="paymentDeadlineNotice" class="deadline-notice hidden"></div>
+        <div id="nextPaymentAlert" class="next-payment hidden"></div>
+        <div id="paymentList" class="payment-list"></div>
+        <div class="payment-actions"><button id="addPaymentBtn" class="secondary-btn">＋ 支払い項目を追加</button><button id="copyPrevPaymentsBtn" class="ghost-btn">毎月項目を再同期</button></div>
+        <div class="microcopy">毎月の支払いは最大12種類。本来の期限日を入れると、古い未払いも超過日数を正確に表示します。支払日は支払済みにした時に自動記録します。</div>
+      </section>
+
+      <section id="savingsSection" class="card savings-card single-card">
+        <div class="section-title-row"><div><div class="eyebrow">REAL MONEY</div><h2>実貯金</h2></div><button id="editSavingsBtn" class="ghost-btn compact-btn">残高を変更</button></div>
+        <div class="big-money" id="savingsBig">¥0</div>
+        <div class="milestone-row"><span id="milestoneLabel">最初の目標 ¥10,000</span><span id="milestonePercent">0%</span></div>
+        <div class="progress-line tall"><div id="savingsProgress"></div></div>
+        <div id="milestoneMessage" class="microcopy">最初の1万円を作る。ここから流れを変える。</div>
+      </section>
+
+      <section id="growthSection" class="card growth-card single-card">
+        <div class="section-title-row">
+          <div><div class="eyebrow">LIFE GROWTH</div><h2>成長ログ</h2></div>
+          <div class="growth-level"><span>LV.</span><strong id="growthLevel">1</strong></div>
+        </div>
+        <div class="growth-detail-head">
+          <img id="growthMiniCharacter" class="growth-mini-character" alt="現在の成長アバター" />
+          <div class="growth-copy">
+            <div id="growthStage" class="growth-stage">RESTART I</div>
+            <div id="growthTitle" class="growth-title">再起動前</div>
+            <div id="growthMessage" class="microcopy">現実の改善だけで進化します。</div>
+          </div>
+        </div>
+        <div class="milestone-row"><span id="growthXpLabel">0 GROWTH</span><span id="growthNextLabel">次まで 27</span></div>
+        <div class="progress-line tall growth-progress"><div id="growthProgress"></div></div>
+        <div class="growth-metrics">
+          <div><span>禁ギャンブル</span><strong id="growthClean">0日</strong></div>
+          <div><span>Uber達成</span><strong id="growthUber">0日</strong></div>
+          <div><span>期限内支払い</span><strong id="growthPay">0件</strong></div>
+          <div><span>衝動を越えた日</span><strong id="growthEmergency">0日</strong></div>
+        </div>
+        <div id="paymentGrowthNote" class="growth-note">支払い比較は、同じ項目を翌月も使うと表示されます。</div>
+        <div class="evolution-heading"><span>12段階の進化</span><small>一度到達した段階は退化しません</small></div>
+        <div id="growthTrack" class="growth-track" aria-label="進化段階"></div>
+      </section>
+
+      <details id="challengeDetails" class="card details-card">
+        <summary><div><div class="eyebrow">90 DAYS</div><strong>防衛記録</strong></div><div class="summary-stats"><span id="challengeSummary">0 / 90日</span><span id="challengeStreakSummary">連続 0日</span></div></summary>
+        <div class="details-body"><div class="calendar-legend"><span><i class="legend clean"></i>守った日</span><span><i class="legend lapse"></i>ギャンブルした日</span></div><div id="calendar90" class="calendar90"></div></div>
+      </details>
+
+      <details class="card details-card tools-card">
+        <summary><div><div class="eyebrow">TOOLS</div><strong>設定・バックアップ</strong></div><span id="backupStatus" class="muted">端末内保存</span></summary>
+        <div class="details-body">
+          <div class="control-grid">
+            <button id="settingsBtn" class="secondary-btn">損失・目標設定</button>
+            <button id="exportBtn" class="secondary-btn">データを書き出す</button>
+            <label class="secondary-btn file-label">データを読み込む<input id="importInput" type="file" accept="application/json" hidden /></label>
+            <button id="recordLapseBtn" class="ghost-btn warn">ギャンブルしてしまった日を記録</button>
+          </div>
+          <p class="microcopy">記録は端末内に保存します。7日ごとのバックアップを推奨します。</p>
+        </div>
+      </details>
+    </main>
+  </div>
+
+  <div id="achievementToast" class="achievement-toast hidden" aria-live="polite"></div>
+  <div id="modalRoot"></div>
+  <script src="app.js"></script>
+</body>
+</html>
