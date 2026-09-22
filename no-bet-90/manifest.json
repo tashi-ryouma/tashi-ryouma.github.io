@@ -11,8 +11,7 @@
   "theme_color": "#080b12",
   "description": "ギャンブル遮断を補助し、Uber稼働・貯金・支払い・生活成長を一体管理する生活防衛PWA",
   "icons": [
-    {"src":"./icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
-    {"src":"./icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+    {"src":"./icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
   ],
-  "shortcuts": [{"name":"緊急モードを開く","short_name":"緊急モード","url":"./?emergency=1","icons":[{"src":"./icon-192.png","sizes":"192x192","type":"image/png"}]}]
+  "shortcuts": [{"name":"緊急モードを開く","short_name":"緊急モード","url":"./?emergency=1","icons":[{"src":"./icon.svg","sizes":"any","type":"image/svg+xml"}]}]
 }
